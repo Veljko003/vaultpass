@@ -1,10 +1,11 @@
+/* Main component */
 .main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* min-height: 100vh; */
 }
 
+/* Footer component */
 .footer {
     padding: 15px 23px;
     color: var(--monochrome-inverse);
@@ -21,7 +22,20 @@
     color: var(--color-span);
 }
 
+/* Title component */
 .title {
-    color: var(--text-color);
+    color: var(--text-color-inverse);
     font-size: 50px;
 }
+
+/* Container component */
+.container {
+    margin-top: 100px;
+    padding: 50px;
+    text-align: center;
+    background: var(--foreground-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}  

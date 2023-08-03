@@ -7,6 +7,7 @@
   --foreground-color: #67a7a7;
   --color-span: #0E8388;
   --text-color: #2C3333;
+  --text-color-inverse: #f0f8f6;
   --monochrome: #111;
   --monochrome-inverse: #fff;
 }
@@ -16,7 +17,8 @@
     --background-color: #2C3333;
     --foreground-color: #2E4F4F;
     --color-span: #0E8388;
-    --text-color: #CBE4DE;
+    --text-color: #f0f8f6;
+    --text-color-inverse: #2C3333;
     --monochrome: #fff;
     --monochrome-inverse: #111;
   }
