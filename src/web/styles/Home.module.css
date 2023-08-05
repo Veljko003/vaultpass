@@ -24,7 +24,7 @@
 
 /* Title component */
 .title {
-    color: var(--text-color-inverse);
+    color: var(--text-color);
     font-size: 50px;
 }
 
@@ -33,11 +33,11 @@
     margin-top: 100px;
     padding: 50px;
     text-align: center;
-    background: var(--foreground-color);
+    background: var(--background-color);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 2px solid var(--color-span);
 }
 
 /* Button component */
@@ -83,6 +83,6 @@
 
 /* Else */
 .paragraphe {
-    color: var(--monochrome-inverse);
+    color: var(--monochrome);
     font-size: 17px;
 }
