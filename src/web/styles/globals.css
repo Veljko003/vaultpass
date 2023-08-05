@@ -6,6 +6,8 @@
   --background-color: #fff;
   --foreground-color: #67a7a7;
   --color-span: #0E8388;
+  --color-span-hover: #08676a;
+  --color-span-active: #06494b;
   --text-color: #2C3333;
   --text-color-inverse: #f0f8f6;
   --monochrome: #111;
@@ -17,6 +19,8 @@
     --background-color: #2C3333;
     --foreground-color: #2E4F4F;
     --color-span: #0E8388;
+    --color-span-hover: #0d9297;
+    --color-span-active: #33c3c8;
     --text-color: #f0f8f6;
     --text-color-inverse: #2C3333;
     --monochrome: #fff;
