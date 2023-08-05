@@ -80,3 +80,9 @@
   background: #06494b;
   color: #fff;
 }
+
+/* Else */
+.paragraphe {
+    color: var(--monochrome-inverse);
+    font-size: 17px;
+}
