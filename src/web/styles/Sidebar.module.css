@@ -1,0 +1,32 @@
+.sidebarContainer {
+    background-color: var(--foreground-color);
+    color: var(--monochrome-inverse);
+    padding: 10px;
+    width: 250px;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+}
+
+.linksContainer {
+    border-radius: 15px;
+    width: 228px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.sidebarLi {
+    padding: 15px;
+    font-size: 18px;
+}
+
+.sidebarLi:hover {
+    background-color: var(--color-span);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.icon {
+    float: left;
+    margin-right: 20px;
+}
