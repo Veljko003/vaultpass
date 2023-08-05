@@ -72,11 +72,11 @@
 
 .btn:hover,
 .btn:focus { 
-  background-color: var(--color-span-hover);
-  color: var(--monochrome-inverse);
+  background-color: #08676a;
+  color: #fff;
 }
 
 .btn:active {
-  background: var(--color-span-active);
-  color: var(--monochrome-inverse);
+  background: #06494b;
+  color: #fff;
 }
