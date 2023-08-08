@@ -19,7 +19,7 @@ export default function Welcome() {
               <Title titleLabel="VaultPass" />
               <p className={styles.paragraphe}>VaultPass is an online password manager. <br /> Log into your account or if you <br /> don&apos;t have one, create it.</p>
               <br />
-              <Link href="/home-page"><Button btnLabel="Let's go" /></Link>
+              <Link href="/all-items"><Button btnLabel="Let's go" /></Link>
               <br />
               <br />
               <Link href="/sign-in"><Button btnLabel="Log in" /></Link>

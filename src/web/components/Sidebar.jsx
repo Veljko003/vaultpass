@@ -14,20 +14,32 @@ const Sidebar = () => {
       <Main>
         <div className={styles.sidebarContainer}>
           <div className={styles.linksContainer}>
+            <div className={styles.partName}>Category</div>
             <ul>
-              <Link className="" href="/home-page">
+              <Link className="" href="/all-items">
                 <li className={styles.sidebarLi}>
-                  Home
+                  All items
                 </li>
               </Link>
-              <Link className="" href="/">
+              <Link className="" href="/credit-cards">
                 <li className={styles.sidebarLi}>
-                  Add new account
+                  Credit Cards
+                </li>
+              </Link>
+              <Link className="" href="/personal-info">
+                <li className={styles.sidebarLi}>
+                  Personal Info
+                </li>
+              </Link>
+              <Link className="" href="/secure-notes">
+                <li className={styles.sidebarLi}>
+                  Secure Notes
                 </li>
               </Link>
             </ul>
           </div>
           <div className={styles.linksContainer}>
+            <div className={styles.partName}>Vaults</div>
             <ul>
               <Link href="/">
                 <li className={styles.sidebarLi}>
@@ -37,6 +49,7 @@ const Sidebar = () => {
             </ul>
           </div>
           <div className={styles.linksContainer}>
+            <div className={styles.partName}>Tools</div>
             <ul>
               <Link href="/">
                 <li className={styles.sidebarLi}>
@@ -50,7 +63,7 @@ const Sidebar = () => {
               </Link>
               <Link href="/">
                 <li className={styles.sidebarLi}>
-                  Vulnerable passwords
+                  Password Health
                 </li>
               </Link>
             </ul>

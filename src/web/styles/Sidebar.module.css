@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500&display=swap');
+
 .sidebarContainer {
     background-color: var(--foreground-color);
     color: var(--monochrome-inverse);
@@ -6,27 +8,33 @@
     height: 100vh;
     position: absolute;
     left: 0;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 .linksContainer {
-    border-radius: 15px;
     width: 228px;
-    padding: 10px;
-    margin-bottom: 20px;
 }
 
 .sidebarLi {
-    padding: 15px;
-    font-size: 18px;
+    padding: 13px;
+    font-size: 15px;
 }
 
 .sidebarLi:hover {
     background-color: var(--color-span);
-    border-radius: 15px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
 .icon {
     float: left;
     margin-right: 20px;
+}
+
+.partName {
+    background-color: var(--background-color);
+    color: var(--monochrome);
+    padding: 5px 0;
+    width: 100%;
+    text-align: center;
 }
