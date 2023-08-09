@@ -13,7 +13,7 @@ import styles from "@/web/styles/Home.module.css"
 export default function Welcome() {
   return (
       <>
-        <HeadPage pageTitle="VaultPass" />
+        <HeadPage />
         <Main>
           <Container>
               <Title titleLabel="VaultPass" />

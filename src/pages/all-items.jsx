@@ -8,7 +8,7 @@ import Sidebar from "@/web/components/Sidebar"
 const AllItems = () => {
     return (
         <>
-            <HeadPage pageTitle="VaultPass" />
+            <HeadPage />
             <Main>
                 <Sidebar />
             </Main>

@@ -8,7 +8,7 @@ import Sidebar from "@/web/components/Sidebar"
 const SecureNotes = () => {
     return (
         <>
-            <HeadPage pageTitle="VaultPass" />
+            <HeadPage />
             <Main>
                 <Sidebar />
             </Main>
