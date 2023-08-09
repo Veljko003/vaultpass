@@ -51,17 +51,17 @@ const Sidebar = () => {
           <div className={styles.linksContainer}>
             <div className={styles.partName}>Tools</div>
             <ul>
-              <Link href="/">
+              <Link href="/password-generator">
                 <li className={styles.sidebarLi}>
                   Password Generator
                 </li>
               </Link>
-              <Link href="/">
+              <Link href="/password-strength-checker">
                 <li className={styles.sidebarLi}>
                   Password Strength Checker
                 </li>
               </Link>
-              <Link href="/">
+              <Link href="/password-health">
                 <li className={styles.sidebarLi}>
                   Password Health
                 </li>
