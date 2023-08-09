@@ -1,0 +1,33 @@
+/* --- PASSWORD GENERATOR --- */
+.passwordGenerator {
+    color: var(--monochrome);
+}
+
+.passwordContainer {
+    background-color: var(--foreground-color);
+    color: var(--monochrome-inverse);
+    font-size: 58px;
+    width: 100%;
+    text-align: center;
+}
+
+.slider {
+    margin-left: 70px;
+    accent-color: var(--color-span);
+}
+
+.row {
+    padding: 16px;
+}
+
+.checkbox {
+    float: right;
+    accent-color: var(--color-span);
+    height: 17px;
+    width: 17px;
+}
+
+.passwordLength {
+    font-size: 20px;
+    margin-left: 10px;
+}
