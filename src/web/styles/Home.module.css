@@ -86,3 +86,12 @@
     color: var(--monochrome);
     font-size: 17px;
 }
+
+.modeLightDark {
+  color: var(--monochrome-inverse);
+  background-color: var(--foreground-color);
+  padding: 6px;
+  border-radius: 7px;
+  position: absolute;
+  right: 0;
+}

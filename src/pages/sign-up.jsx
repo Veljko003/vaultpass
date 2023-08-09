@@ -9,6 +9,7 @@ import Footer from "@/web/components/Footer"
 import Form from "@/web/components/Form.jsx"
 import FormField from "@/web/components/FormField.jsx"
 import SubmitButton from "@/web/components/SubmitButton.jsx"
+import ThemeSwitchButton from "@/web/components/ThemeSwitchButton"
 import api from "@/web/services/api.js"
 
 // Form attributes
@@ -58,6 +59,7 @@ const SignUp = () => {
     <>
       <HeadPage />
       <Main>
+        <ThemeSwitchButton />
         <br />
         <Form
           title="SIGN UP"
@@ -82,7 +84,7 @@ const SignUp = () => {
           <br />
           <br />
           <br />
-          <span className="text-sm">You already have an account ? <br /><Link href="/sign-in" className="text-[#0E8388]">Log in</Link></span><br /><br />
+          <span className="text-sm text-[#111]">You already have an account ? <br /><Link href="/sign-in" className="text-[#0E8388]">Log in</Link></span><br /><br />
         </Form>
       </Main>
       <Footer />

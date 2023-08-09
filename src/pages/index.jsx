@@ -8,6 +8,7 @@ import Footer from "@/web/components/Footer"
 import Container from "@/web/components/Container"
 import Button from "@/web/components/Button"
 import styles from "@/web/styles/Home.module.css"
+import ThemeSwitchButton from "@/web/components/ThemeSwitchButton"
 
 // Welcome function
 export default function Welcome() {
@@ -15,6 +16,7 @@ export default function Welcome() {
       <>
         <HeadPage />
         <Main>
+          <ThemeSwitchButton />
           <Container>
               <Title titleLabel="VaultPass" />
               <p className={styles.paragraphe}>VaultPass is an online password manager. <br /> Log into your account or if you <br /> don&apos;t have one, create it.</p>

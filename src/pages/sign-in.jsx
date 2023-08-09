@@ -11,6 +11,7 @@ import Form from "@/web/components/Form"
 import FormField from "@/web/components/FormField"
 import Footer from "@/web/components/Footer"
 import HeadPage from "@/web/components/HeadPage"
+import ThemeSwitchButton from "@/web/components/ThemeSwitchButton"
 
 // Form attributes
 const initialValues = {
@@ -44,6 +45,7 @@ const SignIn = () => {
     <>
       <HeadPage />
       <Main>
+        <ThemeSwitchButton />
         <br />
         <Form
           title="SIGN IN"
@@ -67,7 +69,7 @@ const SignIn = () => {
           <br />
           <br />
           <br />
-          <span className="text-sm">You don&apos;t have an account ? <br /><Link href="/sign-up" className="text-[#0E8388]">Create one</Link></span><br /><br />
+          <span className="text-sm text-[#111]">You don&apos;t have an account ? <br /><Link href="/sign-up" className="text-[#0E8388]">Create one</Link></span><br /><br />
         </Form>
       </Main>
       <Footer />

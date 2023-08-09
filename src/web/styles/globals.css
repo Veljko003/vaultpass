@@ -14,16 +14,14 @@
 }
 
 /* Dark mode colors */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #383c43;
-    --foreground-color: #fff;
-    --color-span: #0E8388;
-    --text-color: #f0f8f6;
-    --text-color-inverse: #2C3333;
-    --monochrome: #fff;
-    --monochrome-inverse: #111;
-  }
+.dark {
+  --background-color: #383c43;
+  --foreground-color: #f0f8f6;
+  --color-span: #0E8388;
+  --text-color: #f0f8f6;
+  --text-color-inverse: #2C3333;
+  --monochrome: #fff;
+  --monochrome-inverse: #111;
 }
 
 body {
