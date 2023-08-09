@@ -47,7 +47,7 @@
   border: 0;
   border-radius: 100px;
   box-sizing: border-box;
-  color: var(--monochrome-inverse);
+  color: #fff;
   cursor: pointer;
   display: inline-flex;
   font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -94,4 +94,29 @@
   border-radius: 7px;
   position: absolute;
   right: 0;
+}
+
+
+/* Home.module.css */
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 70px;
+  background-color: var(--monochrome-inverse);
+  border: 1px solid var(--foreground-color);
+  padding: 8px;
+}
+
+.visible {
+  display: block;
+}
+
+.item {
+  padding: 8px;
+}
+
+.item:hover {
+  color: #fff;
+  background-color: var(--color-span);
 }

@@ -1,5 +1,4 @@
 // Imports
-import Image from "next/image";
 import Link from "next/link";
 
 import styles from "@/web/styles/Sidebar.module.css";
@@ -19,6 +18,11 @@ const Sidebar = () => {
               <Link className="" href="/all-items">
                 <li className={styles.sidebarLi}>
                   All items
+                </li>
+              </Link>
+              <Link className="" href="/passwords">
+                <li className={styles.sidebarLi}>
+                  Passwords
                 </li>
               </Link>
               <Link className="" href="/credit-cards">
