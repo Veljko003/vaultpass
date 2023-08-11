@@ -4,6 +4,7 @@ import Main from "@/web/components/Main"
 import Footer from "@/web/components/Footer"
 import Sidebar from "@/web/components/Sidebar"
 import ThemeSwitchButton from "@/web/components/ThemeSwitchButton"
+import Button from "@/web/components/Button"
 
 // CreditCards function
 const CreditCards = () => {
@@ -13,6 +14,8 @@ const CreditCards = () => {
             <Main>
                 <ThemeSwitchButton />
                 <Sidebar />
+                <br />
+                <Button btnLabel="Add credit card" />
             </Main>
             <Footer />
         </>
