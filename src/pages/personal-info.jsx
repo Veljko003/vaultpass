@@ -1,4 +1,6 @@
 // Imports
+import Link from "next/link"
+
 import HeadPage from "@/web/components/HeadPage"
 import Main from "@/web/components/Main"
 import Footer from "@/web/components/Footer"
@@ -15,7 +17,7 @@ const PersonalInfo = () => {
                 <ThemeSwitchButton />
                 <Sidebar />
                 <br />
-                <Button btnLabel="Add personal info" />
+                <Link href="/formPages/personalInfoForm"><Button btnLabel="Add personal info" /></Link>
             </Main>
             <Footer />
         </>

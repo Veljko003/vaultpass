@@ -1,4 +1,6 @@
 // Imports
+import Link from "next/link"
+
 import HeadPage from "@/web/components/HeadPage"
 import Main from "@/web/components/Main"
 import Footer from "@/web/components/Footer"
@@ -15,7 +17,7 @@ const CreditCards = () => {
                 <ThemeSwitchButton />
                 <Sidebar />
                 <br />
-                <Button btnLabel="Add credit card" />
+                <Link href="/formPages/creditCardForm"><Button btnLabel="Add credit card" /></Link>
             </Main>
             <Footer />
         </>
