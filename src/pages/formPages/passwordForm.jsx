@@ -11,6 +11,7 @@ import FormPage from "@/web/components/FormPage";
 import FormField from "@/web/components/FormField";
 import Subtitle from "@/web/components/Subtitle";
 import Textarea from "@/web/components/Textarea";
+import AddButton from "@/web/components/AddButton";
 
 // Form attributes
 const initialValues = {
@@ -75,8 +76,12 @@ const PasswordForm = () => {
             placeholder="Website URL"
             label="Website"
           />
+          <AddButton btnLabel="Add websites" />
+          <br />
           <br />
           <Subtitle titleLabel="Custom Fields" />
+          <AddButton btnLabel="Add websites" />
+          <br />
           <br />
           <Subtitle titleLabel="Other" />
           <br />

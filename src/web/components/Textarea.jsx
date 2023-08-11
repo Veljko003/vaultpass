@@ -4,7 +4,7 @@ const Textarea = (props) => {
     const { titleLabel } = props
 
     return (
-        <textarea id="" cols="30" rows="10" className={styles.textarea} placeholder="Notes"></textarea>
+        <textarea id="" cols="60" rows="10" className={styles.textarea} placeholder="Notes"></textarea>
     )
 }
 

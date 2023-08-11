@@ -128,3 +128,27 @@
   font-family: 'Nunito Sans', sans-serif;
   font-weight: bold;
 }
+
+
+/* AddButton component */
+.btnAddMore {
+  color: var(--color-span);
+  font-size: 16px;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.plusAdd {
+  font-size: 27px;
+}
+
+.textAdd {
+  margin-left: 20px;
+}
+
+/* Textarea component */
+.textarea {
+  border: 1px solid var(--monochrome);
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 10px;
+}
