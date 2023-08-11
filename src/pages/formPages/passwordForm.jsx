@@ -1,5 +1,5 @@
 // Imports
-import * as yup from "yup"
+import * as yup from "yup";
 
 import styles from "@/web/styles/Form.module.css";
 import HeadPage from "@/web/components/HeadPage";
@@ -15,16 +15,20 @@ import Textarea from "@/web/components/Textarea";
 
 // Form attributes
 const initialValues = {
-    title: "",
-    password: "",
-  }
-  
-  const validationSchema = yup.object().shape({
-    title: yup.string().required("Title is required").label("Title"),
-    email: yup.string().email().required("E-mail is required").label("E-mail"),
-    username: yup.string().required("Username is required").label("Username"),
-    password: yup.string().min(8).required("Password is required").label("Password"),
-  })
+  title: "",
+  password: "",
+};
+
+const validationSchema = yup.object().shape({
+  title: yup.string().required("Title is required").label("Title"),
+  email: yup.string().email().required("E-mail is required").label("E-mail"),
+  username: yup.string().required("Username is required").label("Username"),
+  password: yup
+    .string()
+    .min(8)
+    .required("Password is required")
+    .label("Password"),
+});
 
 // PasswordForm function
 const PasswordForm = () => {
@@ -34,8 +38,11 @@ const PasswordForm = () => {
       <Main>
         <ThemeSwitchButton />
         <Sidebar />
-        <FormPage initialValues={initialValues} validationSchema={validationSchema}>
-        <FormField
+        <FormPage
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+        >
+          <FormField
             name="title"
             type="text"
             placeholder="Title"
