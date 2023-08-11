@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500&display=swap');
+
 /* Main component */
 .main {
     display: flex;
@@ -96,8 +98,7 @@
   right: 0;
 }
 
-
-/* Home.module.css */
+/* Dropdown button */
 
 .dropdown {
   display: none;
@@ -119,4 +120,11 @@
 .item:hover {
   color: #fff;
   background-color: var(--color-span);
+}
+
+/* Subtitle component */
+.subTitle {
+  font-size: 24px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: bold;
 }

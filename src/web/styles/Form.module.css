@@ -53,3 +53,10 @@
     background: #06494b;
     color: #fff;
 }
+
+
+/* FORM PAGES */
+.formPageContainer {
+    border: 1px solid black;
+    padding: 50px;
+}
