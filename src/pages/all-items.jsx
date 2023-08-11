@@ -28,10 +28,10 @@ const AllItems = () => {
         <Button onClick={toggleDropdown} btnLabel="Add item" />
         {isDropdownVisible && (
           <div className={`${styles.dropdown} ${styles.visible}`}>
-            <Link href="/passwords"><span className={styles.item}>Password</span></Link><br /><br />
-            <Link href="/"><span className={styles.item}>Credit Card</span></Link><br /><br />
-            <Link href="/"><span className={styles.item}>Secure Note</span></Link><br /><br />
-            <Link href="/"><span className={styles.item}>Personal Info</span></Link>
+            <Link href="/formPages/passwordForm"><span className={styles.item}>Password</span></Link><br /><br />
+            <Link href="/formPages/creditCardForm"><span className={styles.item}>Credit Card</span></Link><br /><br />
+            <Link href="/formPages/secureNoteForm"><span className={styles.item}>Secure Note</span></Link><br /><br />
+            <Link href="/formPages/personalInfoForm"><span className={styles.item}>Personal Info</span></Link>
           </div>
         )}
       </Main>
