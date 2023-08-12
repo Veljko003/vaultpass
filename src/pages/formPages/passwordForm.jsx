@@ -7,6 +7,7 @@ import Main from "@/web/components/Main";
 import Sidebar from "@/web/components/Sidebar";
 import ThemeSwitchButton from "@/web/components/ThemeSwitchButton";
 import Button from "@/web/components/Button";
+import CancelButton from "@/web/components/CancelButton";
 import FormPage from "@/web/components/FormPage";
 import FormField from "@/web/components/FormField";
 import Subtitle from "@/web/components/Subtitle";
@@ -21,12 +22,10 @@ const initialValues = {
 
 const validationSchema = yup.object().shape({
   title: yup.string().required("Title is required").label("Title"),
-  email: yup.string().email().required("E-mail is required").label("E-mail"),
-  username: yup.string().required("Username is required").label("Username"),
+  email: yup.string().email().label("E-mail"),
+  username: yup.string().label("Username"),
   password: yup
     .string()
-    .min(8)
-    .required("Password is required")
     .label("Password"),
 });
 
@@ -80,12 +79,16 @@ const PasswordForm = () => {
           <br />
           <br />
           <Subtitle titleLabel="Custom Fields" />
-          <AddButton btnLabel="Add websites" />
+          <AddButton btnLabel="Add custom fields" />
           <br />
           <br />
           <Subtitle titleLabel="Other" />
           <br />
           <Textarea />
+          <br />
+          <br />
+          <Button btnLabel="Save" />
+          <CancelButton />
         </FormPage>
       </Main>
     </>

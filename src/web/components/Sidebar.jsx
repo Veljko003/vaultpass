@@ -43,16 +43,6 @@ const Sidebar = () => {
             </ul>
           </div>
           <div className={styles.linksContainer}>
-            <div className={styles.partName}>Vaults</div>
-            <ul>
-              <Link href="/">
-                <li className={styles.sidebarLi}>
-                  Vault
-                </li>
-              </Link>
-            </ul>
-          </div>
-          <div className={styles.linksContainer}>
             <div className={styles.partName}>Tools</div>
             <ul>
               <Link href="/password-generator">
@@ -68,6 +58,16 @@ const Sidebar = () => {
               <Link href="/password-health">
                 <li className={styles.sidebarLi}>
                   Password Health
+                </li>
+              </Link>
+            </ul>
+          </div>
+          <div className={styles.linksContainer}>
+            <div className={styles.partName}>Vaults</div>
+            <ul>
+              <Link href="/">
+                <li className={styles.sidebarLi}>
+                  Vault
                 </li>
               </Link>
             </ul>
