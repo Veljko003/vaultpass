@@ -17,6 +17,8 @@ import AddButton from "@/web/components/AddButton";
 // Form attributes
 const initialValues = {
   title: "",
+  email: "",
+  username: "",
   password: "",
 };
 

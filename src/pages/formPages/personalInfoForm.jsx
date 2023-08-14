@@ -1,11 +1,16 @@
 // Imports
-import styles from "@/web/styles/Form.module.css";
+import * as yup from "yup" 
+
 import HeadPage from "@/web/components/HeadPage";
 import Main from "@/web/components/Main";
-import Footer from "@/web/components/Footer";
 import Sidebar from "@/web/components/Sidebar";
 import ThemeSwitchButton from "@/web/components/ThemeSwitchButton";
 import Button from "@/web/components/Button";
+import FormField from "@/web/components/FormField";
+import FormPage from "@/web/components/FormPage";
+import Subtitle from "@/web/components/Subtitle";
+import CancelButton from "@/web/components/CancelButton";
+import Textarea from "@/web/components/Textarea";
 
 // PersonalInfoForm function
 const PersonalInfoForm = () => {
@@ -15,8 +20,83 @@ const PersonalInfoForm = () => {
       <Main>
         <ThemeSwitchButton />
         <Sidebar />
+        <FormPage>
+          <FormField
+            name="title"
+            type="text"
+            placeholder="Title"
+            label="Title"
+          />
+          <br />
+          <Subtitle titleLabel="Contact details" />
+          <FormField
+            name="full-name"
+            type="text"
+            placeholder="Full Name"
+            label="Full-Name"
+          />
+          <br />
+          <FormField
+            name="email"
+            type="email"
+            placeholder="E-mail"
+            label="E-mail"
+          />
+          <FormField
+            name="phone"
+            type="telephone"
+            placeholder="Phone"
+            label="Phone"
+          />
+          <br />
+          <Subtitle titleLabel="Address Details" />
+          <FormField
+            name="address"
+            type="text"
+            placeholder="Address Line 1"
+            label="Address"
+          />
+          <FormField
+            name="address2"
+            type="text"
+            placeholder="Address Line 2"
+            label="Address-2"
+          />
+          <FormField
+            name="city"
+            type="text"
+            placeholder="City"
+            label="City"
+          />
+          <FormField
+            name="postal"
+            type="text"
+            placeholder="ZIP or Postal Code"
+            label="Postal"
+          />
+          <FormField
+            name="province"
+            type="text"
+            placeholder="State or Province"
+            label="province"
+          />
+          <FormField
+            name="country"
+            type="text"
+            placeholder="Country"
+            label="Country"
+          />
+          <br />
+          <br />
+          <Subtitle titleLabel="Other" />
+          <br />
+          <Textarea />
+          <br />
+          <br />
+          <Button btnLabel="Save" />
+          <CancelButton />
+        </FormPage>
       </Main>
-      <Footer />
     </>
   );
 };
