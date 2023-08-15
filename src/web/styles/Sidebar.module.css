@@ -22,7 +22,8 @@
 }
 
 .sidebarLi:hover {
-    background-color: var(--color-span);
+    background-color: var(--text-color-inverse);
+    color: var(--text-color);
     border-radius: 5px;
     cursor: pointer;
 }
@@ -30,6 +31,12 @@
 .icon {
     float: left;
     margin-right: 20px;
+}
+
+.addFolder {
+    position: absolute;
+    left: 200px;
+    bottom: 132px;
 }
 
 .partName {

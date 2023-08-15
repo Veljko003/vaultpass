@@ -27,17 +27,17 @@ const Sidebar = () => {
               </Link>
               <Link className="" href="/passwords">
                 <li className={styles.sidebarLi}>
-                <Image src="/password-light.svg" alt="" width={20} height={10} className={styles.icon} />Passwords
+                <Image src="/password.svg" alt="" width={20} height={10} className={styles.icon} />Passwords
                 </li>
               </Link>
               <Link className="" href="/credit-cards">
                 <li className={styles.sidebarLi}>
-                <Image src="/credit-card-light.svg" alt="" width={20} height={10} className={styles.icon} />Credit Cards
+                <Image src="/credit-card.svg" alt="" width={20} height={10} className={styles.icon} />Credit Cards
                 </li>
               </Link>
               <Link className="" href="/personal-info">
                 <li className={styles.sidebarLi}>
-                <Image src="/personal-info-light.svg" alt="" width={20} height={10} className={styles.icon} />Personal Info
+                <Image src="/personal-info.svg" alt="" width={20} height={10} className={styles.icon} />Personal Info
                 </li>
               </Link>
               <Link className="" href="/secure-notes">
@@ -52,27 +52,27 @@ const Sidebar = () => {
             <ul>
               <Link href="/password-generator">
                 <li className={styles.sidebarLi}>
-                  Password Generator
+                <Image src="/password-generator.svg" alt="" width={20} height={10} className={styles.icon} />Password Generator
                 </li>
               </Link>
               <Link href="/password-strength-checker">
                 <li className={styles.sidebarLi}>
-                  Password Strength Checker
+                <Image src="/password-strength-checker.svg" alt="" width={20} height={10} className={styles.icon} />Password Strength Checker
                 </li>
               </Link>
               <Link href="/password-health">
                 <li className={styles.sidebarLi}>
-                  Password Health
+                <Image src="/password-health.svg" alt="" width={20} height={10} className={styles.icon} />Password Health
                 </li>
               </Link>
             </ul>
           </div>
           <div className={styles.linksContainer}>
-            <div className={styles.partName}>Vaults</div>
+            <div className={styles.partName}>Vaults <button><Image src="/add-folder.svg" alt="" width={20} height={10} className={styles.addFolder} /></button></div>
             <ul>
               <Link href="/">
                 <li className={styles.sidebarLi}>
-                  Vault
+                <Image src="/folder.svg" alt="" width={20} height={10} className={styles.icon} />Vault
                 </li>
               </Link>
             </ul>
