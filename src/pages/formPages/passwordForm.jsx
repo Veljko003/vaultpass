@@ -86,7 +86,7 @@ const PasswordForm = () => {
           <br />
           <Subtitle titleLabel="Other" />
           <br />
-          <Textarea />
+          <Textarea placeholder="Notes" />
           <br />
           <br />
           <Button btnLabel="Save" />

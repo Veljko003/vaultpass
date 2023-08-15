@@ -12,6 +12,11 @@ import Subtitle from "@/web/components/Subtitle";
 import CancelButton from "@/web/components/CancelButton";
 import Textarea from "@/web/components/Textarea";
 
+// Form attributes
+const validationSchema = yup.object().shape({
+  title: yup.string().required("Title is required").label("Title"),
+});
+
 // PersonalInfoForm function
 const PersonalInfoForm = () => {
   return (
@@ -20,7 +25,7 @@ const PersonalInfoForm = () => {
       <Main>
         <ThemeSwitchButton />
         <Sidebar />
-        <FormPage>
+        <FormPage validationSchema={validationSchema}>
           <FormField
             name="title"
             type="text"
@@ -90,7 +95,7 @@ const PersonalInfoForm = () => {
           <br />
           <Subtitle titleLabel="Other" />
           <br />
-          <Textarea />
+          <Textarea placeholder="Notes" />
           <br />
           <br />
           <Button btnLabel="Save" />
