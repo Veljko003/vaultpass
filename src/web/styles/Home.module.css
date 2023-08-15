@@ -83,18 +83,6 @@
   color: #fff;
 }
 
-/* Else */
-.paragraphe {
-    color: var(--monochrome);
-    font-size: 17px;
-}
-
-.modeLightDark {
-  color: var(--foreground-color);
-  background-color: var(--monochrome-inverse);
-  padding: 6px;
-  border-radius: 7px;
-}
 
 /* Dropdown button */
 
@@ -180,4 +168,22 @@
   -webkit-user-select: none;
   vertical-align: middle;
   margin-left: 20px;
+}
+
+/* Else */
+.paragraphe {
+    color: var(--monochrome);
+    font-size: 17px;
+}
+
+.modeLightDark {
+  color: var(--foreground-color);
+  background-color: var(--monochrome-inverse);
+  padding: 6px;
+  border-radius: 7px;
+}
+
+.icon {
+  float: left;
+  margin-right: 20px;
 }
