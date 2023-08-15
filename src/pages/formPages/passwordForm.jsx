@@ -1,5 +1,6 @@
 // Imports
 import * as yup from "yup";
+import React, { useState } from "react";
 
 import styles from "@/web/styles/Form.module.css";
 import HeadPage from "@/web/components/HeadPage";
@@ -26,13 +27,19 @@ const validationSchema = yup.object().shape({
   title: yup.string().required("Title is required").label("Title"),
   email: yup.string().email().label("E-mail"),
   username: yup.string().label("Username"),
-  password: yup
-    .string()
-    .label("Password"),
+  password: yup.string().label("Password"),
 });
 
 // PasswordForm function
 const PasswordForm = () => {
+  const [websiteFields, setWebsiteFields] = useState([{ name: "website1" }]);
+
+  const addWebsiteField = () => {
+    setWebsiteFields([
+      ...websiteFields,
+      { name: `website${websiteFields.length + 1}` },
+    ]);
+  };
   return (
     <>
       <HeadPage />
@@ -71,13 +78,16 @@ const PasswordForm = () => {
           />
           <br />
           <Subtitle titleLabel="Websites" />
-          <FormField
-            name="websites"
-            type="text"
-            placeholder="Website URL"
-            label="Website"
-          />
-          <AddButton btnLabel="Add websites" />
+          {websiteFields.map((field, index) => (
+            <FormField
+              key={field.name}
+              name={field.name}
+              type="text"
+              placeholder="Website URL"
+              label={`Website ${index + 1}`}
+            />
+          ))}
+          <AddButton btnLabel="Add websites" onClick={addWebsiteField} />
           <br />
           <br />
           <Subtitle titleLabel="Custom Fields" />
