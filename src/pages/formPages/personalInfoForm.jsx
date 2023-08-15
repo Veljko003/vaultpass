@@ -4,7 +4,6 @@ import * as yup from "yup"
 import HeadPage from "@/web/components/HeadPage";
 import Main from "@/web/components/Main";
 import Sidebar from "@/web/components/Sidebar";
-import ThemeSwitchButton from "@/web/components/ThemeSwitchButton";
 import Button from "@/web/components/Button";
 import FormField from "@/web/components/FormField";
 import FormPage from "@/web/components/FormPage";
@@ -23,7 +22,6 @@ const PersonalInfoForm = () => {
     <>
       <HeadPage />
       <Main>
-        <ThemeSwitchButton />
         <Sidebar />
         <FormPage validationSchema={validationSchema}>
           <FormField

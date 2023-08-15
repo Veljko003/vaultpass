@@ -6,7 +6,6 @@ import HeadPage from "@/web/components/HeadPage";
 import Main from "@/web/components/Main";
 import Footer from "@/web/components/Footer";
 import Sidebar from "@/web/components/Sidebar";
-import ThemeSwitchButton from "@/web/components/ThemeSwitchButton";
 import styles from "@/web/styles/Tools.module.css";
 import "@/web/services/serviceWorker.js";
 
@@ -35,7 +34,6 @@ const PasswordStrengthChecker = () => {
     <>
       <HeadPage />
       <Main>
-        <ThemeSwitchButton />
         <Sidebar />
         <div className={styles.container}>
           <label className={styles.labelPassword}>

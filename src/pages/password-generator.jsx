@@ -8,7 +8,6 @@ import Sidebar from "@/web/components/Sidebar";
 import Title from "@/web/components/Title";
 import Button from "@/web/components/Button";
 import styles from "@/web/styles/Tools.module.css";
-import ThemeSwitchButton from "@/web/components/ThemeSwitchButton";
 
 // PasswordGenerator function
 const PasswordGenerator = () => {
@@ -54,7 +53,6 @@ const PasswordGenerator = () => {
       <HeadPage />
       <Main>
         <Sidebar />
-        <ThemeSwitchButton />
         <Title titleLabel="Password Generator" />
         <br />
         <br />

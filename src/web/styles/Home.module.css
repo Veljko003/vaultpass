@@ -90,12 +90,10 @@
 }
 
 .modeLightDark {
-  color: var(--monochrome-inverse);
-  background-color: var(--foreground-color);
+  color: var(--foreground-color);
+  background-color: var(--monochrome-inverse);
   padding: 6px;
   border-radius: 7px;
-  position: absolute;
-  right: 0;
 }
 
 /* Dropdown button */

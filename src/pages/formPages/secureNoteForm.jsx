@@ -5,7 +5,6 @@ import HeadPage from "@/web/components/HeadPage";
 import Main from "@/web/components/Main";
 import Footer from "@/web/components/Footer";
 import Sidebar from "@/web/components/Sidebar";
-import ThemeSwitchButton from "@/web/components/ThemeSwitchButton";
 import Button from "@/web/components/Button";
 import FormPage from "@/web/components/FormPage";
 import FormField from "@/web/components/FormField";
@@ -23,7 +22,6 @@ const SecureNoteForm = () => {
     <>
       <HeadPage />
       <Main>
-        <ThemeSwitchButton />
         <Sidebar />
         <FormPage validationSchema={validationSchema}>
         <FormField

@@ -2,11 +2,9 @@
 import * as yup from "yup";
 import React, { useState } from "react";
 
-import styles from "@/web/styles/Form.module.css";
 import HeadPage from "@/web/components/HeadPage";
 import Main from "@/web/components/Main";
 import Sidebar from "@/web/components/Sidebar";
-import ThemeSwitchButton from "@/web/components/ThemeSwitchButton";
 import Button from "@/web/components/Button";
 import CancelButton from "@/web/components/CancelButton";
 import FormPage from "@/web/components/FormPage";
@@ -44,7 +42,6 @@ const PasswordForm = () => {
     <>
       <HeadPage />
       <Main>
-        <ThemeSwitchButton />
         <Sidebar />
         <FormPage
           initialValues={initialValues}
