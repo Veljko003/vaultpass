@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* --- THEME MODES COLORS --- */
+
 /* Light mode colors */
 :root {
   --background-color: #fff;
@@ -24,7 +26,22 @@
   --monochrome-inverse: #111;
 }
 
+/* Styling body throughout all the pages */
 body {
   color: var(--monochrome);
   background: var(--background-color);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
 }
