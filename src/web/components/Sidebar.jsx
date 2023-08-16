@@ -11,6 +11,10 @@ import ThemeSwitchButton from "./ThemeSwitchButton";
 // Sidebar function
 const Sidebar = () => {
   const [vaults, setVaults] = useState([]);
+  const [renamingIndex, setRenamingIndex] = useState(null);
+  const [newVaultName, setNewVaultName] = useState("");
+
+  // --- VAULT FUNCTIONS
 
   // Add Vault (Folder)
   const addVault = () => {
@@ -23,6 +27,18 @@ const Sidebar = () => {
     const updatedVaults = vaults.filter((_, idx) => idx !== index);
     setVaults(updatedVaults);
   };
+
+  // Rename Vault (Folder)
+  const renameVault = (index, newName) => {
+    const updatedVaults = [...vaults];
+    updatedVaults[index].name = newName;
+    setVaults(updatedVaults);
+    setRenamingIndex(null);
+    setNewVaultName(""); // Reset new name
+  };
+  
+  // ---
+
   return (
     <>
       <HeadPage />
@@ -160,22 +176,42 @@ const Sidebar = () => {
                     height={10}
                     className={styles.icon}
                   />
-                  {vault.name}
-                  <Image
-                    src="/trash.svg"
-                    alt=""
-                    width={17}
-                    height={7}
-                    className={styles.actionIcon}
-                    onClick={() => deleteVault(index)}
-                  />
-                  <Image
-                    src="/rename.svg"
-                    alt=""
-                    width={17}
-                    height={7}
-                    className={styles.actionIcon}
-                  />
+                  {renamingIndex === index ? (
+                    <>
+                      <input
+                        type="text"
+                        value={newVaultName}
+                        onChange={(e) => setNewVaultName(e.target.value)}
+                        style={{ color: "black" }}
+                      />
+                      <button onClick={() => renameVault(index, newVaultName)}>
+                        Rename
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      {vault.name}
+                      <Image
+                        src="/trash.svg"
+                        alt=""
+                        width={17}
+                        height={7}
+                        className={styles.actionIcon}
+                        onClick={() => deleteVault(index)}
+                      />
+                      <Image
+                        src="/rename.svg"
+                        alt=""
+                        width={17}
+                        height={7}
+                        className={styles.actionIcon}
+                        onClick={() => {
+                          setRenamingIndex(index);
+                          setNewVaultName(vault.name);
+                        }}
+                      />
+                    </>
+                  )}
                 </li>
               ))}
             </ul>
