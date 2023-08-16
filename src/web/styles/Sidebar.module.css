@@ -48,3 +48,8 @@
     width: 100%;
     text-align: center;
 }
+
+.actionIcon {
+    float: right;
+    margin-left: 16px;
+}

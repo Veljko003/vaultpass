@@ -12,9 +12,16 @@ import ThemeSwitchButton from "./ThemeSwitchButton";
 const Sidebar = () => {
   const [vaults, setVaults] = useState([]);
 
+  // Add Vault (Folder)
   const addVault = () => {
     const newVaults = [...vaults, { name: `Vault ${vaults.length + 1}` }];
     setVaults(newVaults);
+  };
+
+  // Delete Vault (Folder)
+  const deleteVault = (index) => {
+    const updatedVaults = vaults.filter((_, idx) => idx !== index);
+    setVaults(updatedVaults);
   };
   return (
     <>
@@ -145,18 +152,31 @@ const Sidebar = () => {
             </div>
             <ul>
               {vaults.map((vault, index) => (
-                <Link key={index} href="/">
-                  <li className={styles.sidebarLi}>
-                    <Image
-                      src="/folder.svg"
-                      alt=""
-                      width={20}
-                      height={10}
-                      className={styles.icon}
-                    />
-                    {vault.name}
-                  </li>
-                </Link>
+                <li className={styles.sidebarLi} key={index}>
+                  <Image
+                    src="/folder.svg"
+                    alt=""
+                    width={20}
+                    height={10}
+                    className={styles.icon}
+                  />
+                  {vault.name}
+                  <Image
+                    src="/trash.svg"
+                    alt=""
+                    width={17}
+                    height={7}
+                    className={styles.actionIcon}
+                    onClick={() => deleteVault(index)}
+                  />
+                  <Image
+                    src="/rename.svg"
+                    alt=""
+                    width={17}
+                    height={7}
+                    className={styles.actionIcon}
+                  />
+                </li>
               ))}
             </ul>
           </div>
