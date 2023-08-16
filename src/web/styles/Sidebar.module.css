@@ -10,6 +10,7 @@
     left: 0;
     font-family: 'Nunito Sans', sans-serif;
     position: fixed;
+    overflow-y: auto; /* Add overflow-y property to enable vertical scrollbar */
 }
 
 .linksContainer {
@@ -34,9 +35,10 @@
 }
 
 .addFolder {
-    position: absolute;
+    /* position: absolute;
     left: 200px;
-    bottom: 132px;
+    bottom: 132px; */
+    float: right;
 }
 
 .partName {

@@ -7,18 +7,14 @@ import styles from "@/web/styles/Sidebar.module.css";
 import HeadPage from "./HeadPage";
 import Main from "./Main";
 import ThemeSwitchButton from "./ThemeSwitchButton";
-import Modal from "./Modal";
 
 // Sidebar function
 const Sidebar = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [vaults, setVaults] = useState([]);
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
+  const addVault = () => {
+    const newVaults = [...vaults, { name: `Vault ${vaults.length + 1}` }];
+    setVaults(newVaults);
   };
   return (
     <>
@@ -33,27 +29,62 @@ const Sidebar = () => {
             <ul>
               <Link className="" href="/all-items">
                 <li className={styles.sidebarLi}>
-                <Image src="/all-items.svg" alt="" width={20} height={10} className={styles.icon} />All items
+                  <Image
+                    src="/all-items.svg"
+                    alt=""
+                    width={20}
+                    height={10}
+                    className={styles.icon}
+                  />
+                  All items
                 </li>
               </Link>
               <Link className="" href="/passwords">
                 <li className={styles.sidebarLi}>
-                <Image src="/password.svg" alt="" width={20} height={10} className={styles.icon} />Passwords
+                  <Image
+                    src="/password.svg"
+                    alt=""
+                    width={20}
+                    height={10}
+                    className={styles.icon}
+                  />
+                  Passwords
                 </li>
               </Link>
               <Link className="" href="/credit-cards">
                 <li className={styles.sidebarLi}>
-                <Image src="/credit-card.svg" alt="" width={20} height={10} className={styles.icon} />Credit Cards
+                  <Image
+                    src="/credit-card.svg"
+                    alt=""
+                    width={20}
+                    height={10}
+                    className={styles.icon}
+                  />
+                  Credit Cards
                 </li>
               </Link>
               <Link className="" href="/personal-info">
                 <li className={styles.sidebarLi}>
-                <Image src="/personal-info.svg" alt="" width={20} height={10} className={styles.icon} />Personal Info
+                  <Image
+                    src="/personal-info.svg"
+                    alt=""
+                    width={20}
+                    height={10}
+                    className={styles.icon}
+                  />
+                  Personal Info
                 </li>
               </Link>
               <Link className="" href="/secure-notes">
                 <li className={styles.sidebarLi}>
-                <Image src="/secure-note.svg" alt="" width={20} height={10} className={styles.icon} />Secure Notes
+                  <Image
+                    src="/secure-note.svg"
+                    alt=""
+                    width={20}
+                    height={10}
+                    className={styles.icon}
+                  />
+                  Secure Notes
                 </li>
               </Link>
             </ul>
@@ -63,30 +94,70 @@ const Sidebar = () => {
             <ul>
               <Link href="/password-generator">
                 <li className={styles.sidebarLi}>
-                <Image src="/password-generator.svg" alt="" width={20} height={10} className={styles.icon} />Password Generator
+                  <Image
+                    src="/password-generator.svg"
+                    alt=""
+                    width={20}
+                    height={10}
+                    className={styles.icon}
+                  />
+                  Password Generator
                 </li>
               </Link>
               <Link href="/password-strength-checker">
                 <li className={styles.sidebarLi}>
-                <Image src="/password-strength-checker.svg" alt="" width={20} height={10} className={styles.icon} />Password Strength Checker
+                  <Image
+                    src="/password-strength-checker.svg"
+                    alt=""
+                    width={20}
+                    height={10}
+                    className={styles.icon}
+                  />
+                  Password Strength Checker
                 </li>
               </Link>
               <Link href="/password-health">
                 <li className={styles.sidebarLi}>
-                <Image src="/password-health.svg" alt="" width={20} height={10} className={styles.icon} />Password Health
+                  <Image
+                    src="/password-health.svg"
+                    alt=""
+                    width={20}
+                    height={10}
+                    className={styles.icon}
+                  />
+                  Password Health
                 </li>
               </Link>
             </ul>
           </div>
           <div className={styles.linksContainer}>
-            <div className={styles.partName}>Vaults <button onClick={openModal}><Image src="/add-folder.svg" alt="" width={20} height={10} className={styles.addFolder} /></button></div>
-            <Modal isOpen={isModalOpen} onClose={closeModal} modalTitle="New Vault" modalInputPlaceholder="Enter Vault name" />
+            <div className={styles.partName}>
+              Vaults{" "}
+              <button onClick={addVault}>
+                <Image
+                  src="/add-folder.svg"
+                  alt=""
+                  width={20}
+                  height={10}
+                  className={styles.addFolder}
+                />
+              </button>
+            </div>
             <ul>
-              <Link href="/">
-                <li className={styles.sidebarLi}>
-                <Image src="/folder.svg" alt="" width={20} height={10} className={styles.icon} />Vault
-                </li>
-              </Link>
+              {vaults.map((vault, index) => (
+                <Link key={index} href="/">
+                  <li className={styles.sidebarLi}>
+                    <Image
+                      src="/folder.svg"
+                      alt=""
+                      width={20}
+                      height={10}
+                      className={styles.icon}
+                    />
+                    {vault.name}
+                  </li>
+                </Link>
+              ))}
             </ul>
           </div>
         </div>
