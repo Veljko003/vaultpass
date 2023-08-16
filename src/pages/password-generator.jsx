@@ -64,8 +64,8 @@ const PasswordGenerator = () => {
             <label>Password Length:</label>
             <input
               type="range"
-              min="4"
-              max="20"
+              min="8"
+              max="30"
               value={passwordLength}
               className={styles.slider}
               onChange={(e) => setPasswordLength(e.target.value)}
