@@ -6,6 +6,7 @@ import Main from "@/web/components/Main"
 import Footer from "@/web/components/Footer"
 import Sidebar from "@/web/components/Sidebar"
 import Button from "@/web/components/Button"
+import DescriptionParagraph from "@/web/components/DescriptionParagraph"
 
 // SecureNotes function
 const SecureNotes = () => {
@@ -16,6 +17,7 @@ const SecureNotes = () => {
                 <Sidebar />
                 <br />
                 <Link href="/formPages/secureNoteForm"><Button btnLabel="Add secure note" /></Link>
+                <DescriptionParagraph>Jot down a Wi-Fi code, office security alarm code or your friend&apos;s birthday.</DescriptionParagraph>
             </Main>
             <Footer />
         </>

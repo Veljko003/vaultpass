@@ -170,6 +170,19 @@
   margin-left: 20px;
 }
 
+/* Paragraph component */
+.paragraphContainer {
+    position: absolute;
+    left: 400px;
+    top: 10px;
+    font-family: 'Nunito Sans', sans-serif;
+    width: 200px;
+}
+
+.textParagraph {
+  color: var(--monochrome);
+}
+
 /* Else */
 .paragraphe {
     color: var(--monochrome);
