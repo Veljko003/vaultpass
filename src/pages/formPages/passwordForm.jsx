@@ -33,7 +33,10 @@ const validationSchema = yup.object().shape({
 const PasswordForm = () => {
   const [websiteFields, setWebsiteFields] = useState([{ name: "website1" }]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  
+  const [customFields, setCustomFields] = useState([]); // State for custom fields
+  const [customFieldName, setCustomFieldName] = useState(""); // State to store input
+
+  // Add websites
   const addWebsiteField = () => {
     setWebsiteFields([
       ...websiteFields,
@@ -41,6 +44,7 @@ const PasswordForm = () => {
     ]);
   };
 
+  // Open/Close Modal
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -48,6 +52,17 @@ const PasswordForm = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+  // Add custom field
+  const addCustomField = () => {
+    setCustomFields([...customFields, customFieldName]);
+    closeModal();
+  };
+
+  const handleCustomFieldInputChange = (event) => {
+    setCustomFieldName(event.target.value);
+  };
+
   return (
     <>
       <HeadPage />
@@ -98,8 +113,25 @@ const PasswordForm = () => {
           <br />
           <br />
           <Subtitle titleLabel="Custom Fields" />
+          {customFields.map((fieldName, index) => (
+            <FormField
+              key={`customField${index}`}
+              name={`customField${index}`}
+              type="text"
+              placeholder={`${fieldName}`}
+              label={fieldName}
+            />
+          ))}
           <AddButton btnLabel="Add custom fields" onClick={openModal} />
-          <Modal isOpen={isModalOpen} onClose={closeModal} modalTitle="Custom Field" modalInputPlaceholder="Enter Custom Field name" />
+          <Modal
+            isOpen={isModalOpen}
+            onClose={closeModal}
+            onClick={addCustomField}
+            modalTitle="Custom Field"
+            modalInputPlaceholder="Enter Custom Field name"
+            inputValue={customFieldName}
+            onInputChange={handleCustomFieldInputChange}
+          />
           <br />
           <br />
           <Subtitle titleLabel="Other" />

@@ -6,7 +6,7 @@ import InputField from './InputField';
 import Button from './Button';
 
 // Modal
-const Modal = ({ isOpen, onClose, modalTitle, modalInputPlaceholder }) => {
+const Modal = ({ isOpen, onClose, modalTitle, modalInputPlaceholder, onClick }) => {
   const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (event) => {
@@ -27,7 +27,7 @@ const Modal = ({ isOpen, onClose, modalTitle, modalInputPlaceholder }) => {
         />
         <br />
         <br />
-        <Button btnLabel="Save" />
+        <Button btnLabel="Save" onClick={onClick} />
         <button onClick={onClose} className={styles.cancel}>Cancel</button>
       </div>
     </div>
