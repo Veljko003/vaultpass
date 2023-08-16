@@ -105,7 +105,7 @@ const PasswordForm = () => {
               key={field.name}
               name={field.name}
               type="text"
-              placeholder="Website URL"
+              placeholder={`Website URL ${index + 1}`}
               label={`Website ${index + 1}`}
             />
           ))}

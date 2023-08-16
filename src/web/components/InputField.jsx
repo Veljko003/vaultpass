@@ -21,6 +21,7 @@ const InputField = (props) => {
         value={value}
         onChange={onChange}
         maxLength={maxLength}
+        style={{ color: 'var(--monochrome)' }}
       />
     </>
   );
