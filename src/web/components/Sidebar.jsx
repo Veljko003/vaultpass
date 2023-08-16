@@ -1,4 +1,5 @@
 // Imports
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -6,9 +7,19 @@ import styles from "@/web/styles/Sidebar.module.css";
 import HeadPage from "./HeadPage";
 import Main from "./Main";
 import ThemeSwitchButton from "./ThemeSwitchButton";
+import Modal from "./Modal";
 
 // Sidebar function
 const Sidebar = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <>
       <HeadPage />
@@ -68,7 +79,8 @@ const Sidebar = () => {
             </ul>
           </div>
           <div className={styles.linksContainer}>
-            <div className={styles.partName}>Vaults <button><Image src="/add-folder.svg" alt="" width={20} height={10} className={styles.addFolder} /></button></div>
+            <div className={styles.partName}>Vaults <button onClick={openModal}><Image src="/add-folder.svg" alt="" width={20} height={10} className={styles.addFolder} /></button></div>
+            <Modal isOpen={isModalOpen} onClose={closeModal} modalTitle="New Vault" modalInputPlaceholder="Enter Vault name" />
             <ul>
               <Link href="/">
                 <li className={styles.sidebarLi}>

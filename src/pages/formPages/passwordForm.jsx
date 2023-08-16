@@ -12,6 +12,7 @@ import FormField from "@/web/components/FormField";
 import Subtitle from "@/web/components/Subtitle";
 import Textarea from "@/web/components/Textarea";
 import AddButton from "@/web/components/AddButton";
+import Modal from "@/web/components/Modal";
 
 // Form attributes
 const initialValues = {
@@ -31,12 +32,21 @@ const validationSchema = yup.object().shape({
 // PasswordForm function
 const PasswordForm = () => {
   const [websiteFields, setWebsiteFields] = useState([{ name: "website1" }]);
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
   const addWebsiteField = () => {
     setWebsiteFields([
       ...websiteFields,
       { name: `website${websiteFields.length + 1}` },
     ]);
+  };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
   return (
     <>
@@ -88,7 +98,8 @@ const PasswordForm = () => {
           <br />
           <br />
           <Subtitle titleLabel="Custom Fields" />
-          <AddButton btnLabel="Add custom fields" />
+          <AddButton btnLabel="Add custom fields" onClick={openModal} />
+          <Modal isOpen={isModalOpen} onClose={closeModal} modalTitle="Custom Field" modalInputPlaceholder="Enter Custom Field name" />
           <br />
           <br />
           <Subtitle titleLabel="Other" />
