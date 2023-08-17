@@ -30,6 +30,25 @@ app.post('/sign-up', async (req, res) => {
   }
 });
 
+// API endpoint to handle user sign-in
+app.post('/sign-in', async (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+    const user = await UserModel.findOne({ username, password });
+
+    if (!user) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
+
+    // You might want to implement more secure authentication logic here
+
+    res.status(200).json({ message: 'Sign in successful', user });
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred' });
+  }
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

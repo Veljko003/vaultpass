@@ -1,45 +1,51 @@
 // Imports
-import * as yup from "yup"
-import Link from "next/link"
-// import { useRouter } from "next/router"
-// import { useContext } from "react"
+import * as yup from "yup";
+import { useState } from "react";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
-// import AppContext from "@/web/components/AppContext"
-import SubmitButton from "@/web/components/SubmitButton.jsx"
-import Main from "@/web/components/Main"
-import Form from "@/web/components/Form"
-import FormField from "@/web/components/FormField"
-import Footer from "@/web/components/Footer"
-import HeadPage from "@/web/components/HeadPage"
-import ThemeSwitchButton from "@/web/components/ThemeSwitchButton"
+import HeadPage from "@/web/components/HeadPage";
+import Main from "@/web/components/Main";
+import Form from "@/web/components/Form";
+import FormField from "@/web/components/FormField";
+import SubmitButton from "@/web/components/SubmitButton";
+import Footer from "@/web/components/Footer";
+import ThemeSwitchButton from "@/web/components/ThemeSwitchButton";
+import api from "@/web/services/api";
 
 // Form attributes
 const initialValues = {
   username: "",
   password: "",
-}
+};
 
 const validationSchema = yup.object().shape({
   username: yup.string().required("Username is required").label("Username"),
   password: yup.string().min(8).required("Password is required").label("Password"),
-})
+});
 
 // SignIn function
 const SignIn = () => {
-  // const router = useRouter()
-  // const {
-  //   actions: { signIn },
-  // } = useContext(AppContext)
-  
+  const router = useRouter();
+  const [signInError, setSignInError] = useState(null);
+
   // Function to be executed when the form is submitted
-/*  const handleSubmit = async (values) => {
-    const { username, password } = values
-    const [err] = await signIn(username, password)
-  
-    if (!err) {
-      router.push("/scan-page")
+  const handleSubmit = async (values) => {
+    try {
+      const response = await api.post("/sign-in", values);
+      
+      if (response.status === 200) {
+        // Successful sign-in, you can handle user authentication here
+        router.push("/all-items");
+      }
+    } catch (error) {
+      if (error.response && error.response.data) {
+        setSignInError(error.response.data.error);
+      } else {
+        setSignInError("An error occurred while signing in.");
+      }
     }
-  }*/
+  };
 
   return (
     <>
@@ -51,8 +57,9 @@ const SignIn = () => {
           title="SIGN IN"
           initialValues={initialValues}
           validationSchema={validationSchema}
-          // onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
         >
+          {signInError && <p className="text-red-500">{signInError}</p>}
           <FormField
             name="username"
             type="text"
@@ -69,12 +76,19 @@ const SignIn = () => {
           <br />
           <br />
           <br />
-          <span className="text-sm text-[#111]">You don&apos;t have an account ? <br /><Link href="/sign-up" className="text-[#0E8388]">Create one</Link></span><br /><br />
+          <span className="text-sm text-[#111]">
+            You don&apos;t have an account ? <br />
+            <Link href="/sign-up" className="text-[#0E8388]">
+              Create one
+            </Link>
+          </span>
+          <br />
+          <br />
         </Form>
       </Main>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default SignIn
+export default SignIn;
