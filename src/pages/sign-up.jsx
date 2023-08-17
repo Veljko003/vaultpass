@@ -20,7 +20,7 @@ const initialValues = {
 }
 
 const validationSchema = yup.object().shape({
-  username: yup.string().min(1).required("Username is required").label("Name"),
+  username: yup.string().min(1).required("Username is required").label("Username"),
   email: yup.string().email().required("E-mail is required").label("E-mail"),
   password: yup
   .string()
