@@ -51,7 +51,7 @@ const SignUp = () => {
 
       router.push("/sign-in")
     } catch (err) {
-      //
+      // error handling
     }
   }
 
