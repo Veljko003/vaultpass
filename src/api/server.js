@@ -1,12 +1,17 @@
+// Imports
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import UserModel from './models/UserModel.js';
 
+// Initializing the Express app
 const app = express();
 
+// Applying CORS middleware to allow cross-origin requests
 app.use(cors());
+
+// Using bodyParser middleware to parse JSON data from requests
 app.use(bodyParser.json());
 
 // MongoDB setup
@@ -41,7 +46,15 @@ app.post('/sign-in', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    // You might want to implement more secure authentication logic here
+    /*
+     Implement more secure authentication logic here: 
+          - Hashing passwords
+          - Token-Based Authentication
+          - Authorization Middleware
+          - Limit Failed Sign-In Attempts
+          - Account Lockout
+          - Secure Sessions
+    */
 
     res.status(200).json({ message: 'Sign in successful', user });
   } catch (error) {
@@ -49,7 +62,7 @@ app.post('/sign-in', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000; // Setting up the server port
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
