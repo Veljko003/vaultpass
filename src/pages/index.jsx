@@ -1,31 +1,27 @@
 // Imports
-import Link from "next/link"
-
 import HeadPage from "@/web/components/HeadPage"
-import Title from "@/web/components/Title"
 import Main from "@/web/components/Main"
 import Footer from "@/web/components/Footer"
 import Container from "@/web/components/Container"
 import Button from "@/web/components/Button"
 import styles from "@/web/styles/Home.module.css"
 import ThemeSwitchButton from "@/web/components/ThemeSwitchButton"
+import Subtitle from "@/web/components/Subtitle"
+import InputField from "@/web/components/InputField"
 
-// Welcome function
-export default function Welcome() {
+// LandingPage function
+export default function LandingPage() {
   return (
       <>
         <HeadPage />
         <Main>
           <ThemeSwitchButton />
           <Container>
-              <Title titleLabel="VaultPass" />
-              <p className={styles.paragraphe}>VaultPass is an online password manager. <br /> Log into your account or if you <br /> don&apos;t have one, create it.</p>
-              <br />
-              <Link href="/all-items"><Button btnLabel="Let's go" /></Link>
+              <Subtitle titleLabel="Enter your e-mail" />
+              <InputField type="email" placeholder="someone@domain.com" className={styles.emailOTP} />
               <br />
               <br />
-              <Link href="/sign-in"><Button btnLabel="Log in" /></Link>
-              <Link href="/sign-up"><Button btnLabel="Sign up" /></Link>
+              <Button btnLabel="Send code" />
           </Container>
         </Main>
         <Footer />
