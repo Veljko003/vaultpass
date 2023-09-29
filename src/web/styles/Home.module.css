@@ -210,7 +210,7 @@
 }
 
 .otpInput {
-  border: 1px solid var(--monochrome);
+  border: 3px solid var(--monochrome);
   border-radius: 10px;
   width: 3rem;
   margin-right: 0.5rem;
