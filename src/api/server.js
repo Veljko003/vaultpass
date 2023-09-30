@@ -4,6 +4,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import UserModel from './models/UserModel.js';
+import nodemailer from 'nodemailer';
 
 // Initializing the Express app
 const app = express();
@@ -21,6 +22,15 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
   .catch(error => console.error('Error connecting to MongoDB:', error));
 
+// Nodemailer setup
+const transporter = nodemailer.createTransport({
+  service: 'your-email-service', // e.g., 'Gmail', 'Yahoo', etc.
+  auth: {
+    user: 'your-email@example.com', // your email address
+    pass: 'your-email-password', // your email password
+  },
+});
+
 // API endpoint to handle user registration
 app.post('/sign-up', async (req, res) => {
   try {
@@ -33,6 +43,19 @@ app.post('/sign-up', async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'An error occurred' });
   }
+    // Sending a welcome email
+    const mailOptions = {
+      from: 'your-email@example.com',
+      to: email, // Use the user's email from the registration data
+      subject: 'VaultPass verification code',
+      text: 'Thank you for signing up with VaultPass!',
+    };
+    try {
+      await transporter.sendMail(mailOptions);
+      res.status(201).json({ message: 'User registered successfully' });
+    } catch (error) {
+      res.status(500).json({ error: 'An error occurred while sending the email' });
+    }
 });
 
 // API endpoint to handle user sign-in
