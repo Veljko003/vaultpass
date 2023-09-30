@@ -11,13 +11,6 @@ import InputField from "@/web/components/InputField"
 
 // LandingPage function
 export default function LandingPage() {
-  const handleAlertOTP = () => {
-    // Generate a random four-digit number
-    const random = Math.floor(1000 + Math.random() * 9000);
-
-    // Display the number in a window alert
-    window.alert(`Your secret code is: ${random}`);
-  }
   return (
       <>
         <HeadPage />
@@ -28,7 +21,7 @@ export default function LandingPage() {
               <InputField type="email" placeholder="someone@domain.com" className={styles.emailOTP} />
               <br />
               <br />
-              <Button btnLabel="Send code" onClick={handleAlertOTP} />
+              <Button btnLabel="Send code" />
           </Container>
         </Main>
         <Footer />
