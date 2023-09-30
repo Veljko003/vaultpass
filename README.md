@@ -34,8 +34,9 @@ It was created using MERN stack and Next.js (Pages Router).
 #### Frameworks
 - Next.js (Pages Router)
 - ReactJS
-- Node.js
 - Tailwind CSS
+- Node.js
+- Express.js
 
 #### DB
 - MongoDB
