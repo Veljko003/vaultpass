@@ -4,7 +4,6 @@ import zxcvbn from "zxcvbn";
 
 import HeadPage from "@/web/components/HeadPage";
 import Main from "@/web/components/Main";
-import Footer from "@/web/components/Footer";
 import Sidebar from "@/web/components/Sidebar";
 import styles from "@/web/styles/Tools.module.css";
 import "@/web/services/serviceWorker.js";
@@ -50,7 +49,6 @@ const PasswordStrengthChecker = () => {
           </label>
         </div>
       </Main>
-      <Footer />
     </>
   );
 };

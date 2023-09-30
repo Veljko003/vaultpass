@@ -5,7 +5,6 @@ import Image from "next/image"
 
 import HeadPage from "@/web/components/HeadPage";
 import Main from "@/web/components/Main";
-import Footer from "@/web/components/Footer";
 import Sidebar from "@/web/components/Sidebar";
 import Button from "@/web/components/Button";
 import styles from "@/web/styles/Home.module.css";
@@ -34,7 +33,6 @@ const AllItems = () => {
           </div>
         )}
       </Main>
-      <Footer />
     </>
   );
 };

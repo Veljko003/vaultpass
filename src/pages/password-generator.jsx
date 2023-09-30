@@ -3,7 +3,6 @@ import React, { useState } from "react";
 
 import HeadPage from "@/web/components/HeadPage";
 import Main from "@/web/components/Main";
-import Footer from "@/web/components/Footer";
 import Sidebar from "@/web/components/Sidebar";
 import Title from "@/web/components/Title";
 import Button from "@/web/components/Button";
@@ -119,7 +118,6 @@ const PasswordGenerator = () => {
           )}
         </div>
       </Main>
-      <Footer />
     </>
   );
 };
