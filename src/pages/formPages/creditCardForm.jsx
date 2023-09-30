@@ -127,9 +127,7 @@ const CreditCardForm = () => {
             className="p-2 border-solid border-slate-300 border-2 rounded-md bg-transparent w-full"
             placeholder="1234"
             inputLabel="Card PIN"
-            inputName="cvv"
-            value={cvv}
-            onChange={handleCVVChange}
+            inputName="pin"
             maxLength="4"
           />
           <br />
