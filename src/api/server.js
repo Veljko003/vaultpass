@@ -3,8 +3,11 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
-import UserModel from './models/UserModel.js';
 import nodemailer from 'nodemailer';
+
+import UserModel from './models/UserModel.js';
+import random from '@/web/services/random.js';
+
 
 // Initializing the Express app
 const app = express();
@@ -48,7 +51,7 @@ app.post('/sign-up', async (req, res) => {
       from: 'your-email@example.com',
       to: email, // Use the user's email from the registration data
       subject: 'VaultPass verification code',
-      text: 'Thank you for signing up with VaultPass!',
+      text: `Thank you for signing up with VaultPass! Your verification code is ${random}`,
     };
     try {
       await transporter.sendMail(mailOptions);
