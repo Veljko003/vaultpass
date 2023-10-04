@@ -1,5 +1,6 @@
 // Imports
 import axios from "axios";
+import { useRouter } from 'next/router';
 
 import HeadPage from "@/web/components/HeadPage";
 import Main from "@/web/components/Main";
@@ -13,6 +14,8 @@ import InputField from "@/web/components/InputField";
 
 // LandingPage function
 export default function LandingPage() {
+  const router = useRouter();
+
   const handleSendCode = async () => {
     try {
       // Make an API call to your backend
@@ -20,6 +23,9 @@ export default function LandingPage() {
 
       // Handle the response (e.g., show a success message)
       console.log(response.data.message);
+
+      // After sending email is succesful, redirect to another page
+      router.push('/otp-verify-page'); 
     } catch (error) {
       // Handle errors (e.g., show an error message)
       console.error("Failed to send email:", error.message);
