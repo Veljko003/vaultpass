@@ -8,6 +8,7 @@ import Main from "@/web/components/Main";
 import Sidebar from "@/web/components/Sidebar";
 import Button from "@/web/components/Button";
 import styles from "@/web/styles/Home.module.css";
+import ListContainer from "@/web/components/ListContainer";
 
 // AllItems function
 const AllItems = () => {
@@ -32,6 +33,8 @@ const AllItems = () => {
             <Link href="/formPages/personalInfoForm"><span className={styles.item}><Image src="/personal-info.svg" alt="" width={20} height={10} className={styles.icon} />Personal Info</span></Link>
           </div>
         )}
+        <ListContainer>
+        </ListContainer>
       </Main>
     </>
   );
