@@ -5,7 +5,7 @@ import Main from "@/web/components/Main"
 import Sidebar from "@/web/components/ui/Sidebar"
 import Button from "@/web/components/ui/buttons/Button"
 import FormField from "@/web/components/ui/forms/FormField"
-import FormPage from "@/web/components/ui/forms/FormPage"
+import Form from "@/web/components/ui/forms/Form"
 import Subtitle from "@/web/components/ui/headers/Subtitle"
 import CancelButton from "@/web/components/ui/buttons/CancelButton"
 import Textarea from "@/web/components/ui/forms/Textarea"
@@ -20,7 +20,7 @@ const PersonalInfoForm = () => (
   <>
     <Main>
       <Sidebar />
-      <FormPage validationSchema={validationSchema}>
+      <Form validationSchema={validationSchema}>
         <FormField name="title" type="text" placeholder="Title" label="Title" />
         <br />
         <Subtitle titleLabel="Contact details" />
@@ -85,7 +85,7 @@ const PersonalInfoForm = () => (
         <br />
         <Button btnLabel="Save" />
         <CancelButton />
-      </FormPage>
+      </Form>
     </Main>
   </>
 )

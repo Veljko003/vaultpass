@@ -5,7 +5,7 @@ import Main from "@/web/components/Main"
 import Footer from "@/web/components/Footer"
 import Sidebar from "@/web/components/ui/Sidebar"
 import Button from "@/web/components/ui/buttons/Button"
-import FormPage from "@/web/components/ui/forms/FormPage"
+import Form from "@/web/components/ui/forms/Form"
 import FormField from "@/web/components/ui/forms/FormField"
 import Textarea from "@/web/components/ui/forms/Textarea"
 import CancelButton from "@/web/components/ui/buttons/CancelButton"
@@ -20,14 +20,14 @@ const SecureNoteForm = () => (
   <>
     <Main>
       <Sidebar />
-      <FormPage validationSchema={validationSchema}>
+      <Form validationSchema={validationSchema}>
         <FormField name="title" type="text" placeholder="Title" label="Title" />
         <br />
         <Textarea placeholder="Secure Note" />
         <br />
         <Button btnLabel="Save" />
         <CancelButton />
-      </FormPage>
+      </Form>
     </Main>
     <Footer />
   </>

@@ -1,53 +1,43 @@
 // Imports
 import * as yup from "yup"
-import { useState } from "react"
 import { useRouter } from "next/router"
 import Link from "next/link"
+import { useMutation } from "@tanstack/react-query"
 
 import Main from "@/web/components/Main"
-import Form from "@/web/components/Form"
+import Form from "@/web/components/ui/forms/Form"
 import FormField from "@/web/components/ui/forms/FormField"
 import SubmitButton from "@/web/components/ui/buttons/SubmitButton"
 import Footer from "@/web/components/Footer"
 import ThemeSwitchButton from "@/web/components/ui/ThemeSwitchButton"
 import apiClient from "@/web/services/apiClient"
+import { emailValidator, passwordValidator } from "@/utils/validators"
+import { useSession } from "@/web/components/SessionContext"
 
 // Form attributes
 const initialValues = {
-  username: "",
+  email: "",
   password: ""
 }
 
 const validationSchema = yup.object().shape({
-  username: yup.string().required("Username is required").label("Username"),
-  password: yup
-    .string()
-    .min(8)
-    .required("Password is required")
-    .label("Password")
+  email: emailValidator.label("E-mail"),
+  password: passwordValidator.label("Password")
 })
 
 // SignIn function
 const SignIn = () => {
   const router = useRouter()
-  const [signInError, setSignInError] = useState(null)
-
-  // Function to be executed when the form is submitted
+  const { saveSessionToken } = useSession()
+  const { mutateAsync } = useMutation({
+    mutationFn: (values) => apiClient.post("/sessions", values)
+  })
   const handleSubmit = async (values) => {
-    try {
-      const response = await apiClient.post("/sign-in", values)
+    const { result: jwt } = await mutateAsync(values)
 
-      if (response.status === 200) {
-        // Successful sign-in, you can handle user authentication here
-        router.push("/all-items")
-      }
-    } catch (error) {
-      if (error.response && error.response.data) {
-        setSignInError(error.response.data.error)
-      } else {
-        setSignInError("An error occurred while signing in.")
-      }
-    }
+    saveSessionToken(jwt)
+
+    router.push("/all-items")
   }
 
   return (
@@ -60,12 +50,11 @@ const SignIn = () => {
           initialValues={initialValues}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}>
-          {signInError && <p className="text-red-500">{signInError}</p>}
           <FormField
-            name="username"
-            type="text"
-            placeholder="Username"
-            label="Username"
+            name="email"
+            type="email"
+            placeholder="Email"
+            label="Email"
           />
           <FormField
             name="password"

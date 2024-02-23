@@ -6,7 +6,7 @@ import Main from "@/web/components/Main"
 import Sidebar from "@/web/components/ui/Sidebar"
 import Button from "@/web/components/ui/buttons/Button"
 import CancelButton from "@/web/components/ui/buttons/CancelButton"
-import FormPage from "@/web/components/ui/forms/FormPage"
+import Form from "@/web/components/ui/forms/Form"
 import FormField from "@/web/components/ui/forms/FormField"
 import Subtitle from "@/web/components/ui/headers/Subtitle"
 import Textarea from "@/web/components/ui/forms/Textarea"
@@ -66,7 +66,7 @@ const PasswordForm = () => {
     <>
       <Main>
         <Sidebar />
-        <FormPage
+        <Form
           initialValues={initialValues}
           validationSchema={validationSchema}>
           <FormField
@@ -138,7 +138,7 @@ const PasswordForm = () => {
           <br />
           <Button btnLabel="Save" />
           <CancelButton />
-        </FormPage>
+        </Form>
       </Main>
     </>
   )

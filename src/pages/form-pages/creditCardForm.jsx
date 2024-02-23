@@ -7,7 +7,7 @@ import Sidebar from "@/web/components/ui/Sidebar"
 import Button from "@/web/components/ui/buttons/Button"
 import CancelButton from "@/web/components/ui/buttons/CancelButton"
 import Subtitle from "@/web/components/ui/headers/Subtitle"
-import FormPage from "@/web/components/ui/forms/FormPage"
+import Form from "@/web/components/ui/forms/Form"
 import InputField from "@/web/components/ui/forms/InputField"
 import FormField from "@/web/components/ui/forms/FormField"
 import Textarea from "@/web/components/ui/forms/Textarea"
@@ -56,7 +56,7 @@ const CreditCardForm = () => {
     <>
       <Main>
         <Sidebar />
-        <FormPage
+        <Form
           initialValues={initialValues}
           validationSchema={validationSchema}>
           <FormField
@@ -137,7 +137,7 @@ const CreditCardForm = () => {
           <br />
           <Button btnLabel="Save" />
           <CancelButton />
-        </FormPage>
+        </Form>
       </Main>
     </>
   )
