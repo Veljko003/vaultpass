@@ -36,10 +36,10 @@ It was created using MERN stack and Next.js (Pages Router).
 - ReactJS
 - Tailwind CSS
 - Node.js
-- Express.js
+- Knex.js
 
 #### DB
-- MongoDB
+- PostgreSQL
 
 ## Author
 
