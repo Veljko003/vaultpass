@@ -1,77 +1,74 @@
 // Imports
-import * as yup from "yup";
-import React, { useState } from "react";
+import * as yup from "yup"
+import React, { useState } from "react"
 
-import HeadPage from "@/web/components/HeadPage";
-import Main from "@/web/components/Main";
-import Sidebar from "@/web/components/ui/Sidebar";
-import Button from "@/web/components/ui/buttons/Button";
-import CancelButton from "@/web/components/ui/buttons/CancelButton";
-import FormPage from "@/web/components/ui/forms/FormPage";
-import FormField from "@/web/components/ui/forms/FormField";
-import Subtitle from "@/web/components/ui/headers/Subtitle";
-import Textarea from "@/web/components/ui/forms/Textarea";
-import AddButton from "@/web/components/ui/buttons/AddButton";
-import Modal from "@/web/components/ui/Modal";
+import Main from "@/web/components/Main"
+import Sidebar from "@/web/components/ui/Sidebar"
+import Button from "@/web/components/ui/buttons/Button"
+import CancelButton from "@/web/components/ui/buttons/CancelButton"
+import FormPage from "@/web/components/ui/forms/FormPage"
+import FormField from "@/web/components/ui/forms/FormField"
+import Subtitle from "@/web/components/ui/headers/Subtitle"
+import Textarea from "@/web/components/ui/forms/Textarea"
+import AddButton from "@/web/components/ui/buttons/AddButton"
+import Modal from "@/web/components/ui/Modal"
 
 // Form attributes
 const initialValues = {
   title: "",
   email: "",
   username: "",
-  password: "",
-};
+  password: ""
+}
 
 const validationSchema = yup.object().shape({
   title: yup.string().required("Title is required").label("Title"),
   email: yup.string().email().label("E-mail"),
   username: yup.string().label("Username"),
-  password: yup.string().label("Password"),
-});
+  password: yup.string().label("Password")
+})
 
 // PasswordForm function
 const PasswordForm = () => {
-  const [websiteFields, setWebsiteFields] = useState([{ name: "website1" }]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [customFields, setCustomFields] = useState([]); // State for custom fields
-  const [customFieldName, setCustomFieldName] = useState(""); // State to store input
+  const [websiteFields, setWebsiteFields] = useState([{ name: "website1" }])
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [customFields, setCustomFields] = useState([]) // State for custom fields
+  const [customFieldName, setCustomFieldName] = useState("") // State to store input
 
   // Add websites
   const addWebsiteField = () => {
     setWebsiteFields([
       ...websiteFields,
-      { name: `website${websiteFields.length + 1}` },
-    ]);
-  };
+      { name: `website${websiteFields.length + 1}` }
+    ])
+  }
 
   // Open/Close Modal
   const openModal = () => {
-    setIsModalOpen(true);
-  };
+    setIsModalOpen(true)
+  }
 
   const closeModal = () => {
-    setIsModalOpen(false);
-  };
+    setIsModalOpen(false)
+  }
 
   // Add custom field
   const addCustomField = () => {
-    setCustomFields([...customFields, customFieldName]);
-    closeModal();
-  };
+    setCustomFields([...customFields, customFieldName])
+    closeModal()
+  }
 
   const handleCustomFieldInputChange = (event) => {
-    setCustomFieldName(event.target.value);
-  };
+    setCustomFieldName(event.target.value)
+  }
 
   return (
     <>
-      <HeadPage />
       <Main>
         <Sidebar />
         <FormPage
           initialValues={initialValues}
-          validationSchema={validationSchema}
-        >
+          validationSchema={validationSchema}>
           <FormField
             name="title"
             type="text"
@@ -144,7 +141,7 @@ const PasswordForm = () => {
         </FormPage>
       </Main>
     </>
-  );
-};
+  )
+}
 
-export default PasswordForm;
+export default PasswordForm

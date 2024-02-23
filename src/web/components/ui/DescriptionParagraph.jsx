@@ -1,7 +1,7 @@
-import styles from "@/web/styles/Home.module.css";
+import styles from "@/web/styles/Home.module.css"
 
 const DescriptionParagraph = (props) => {
-  const { children } = props;
+  const { children } = props
 
   return (
     <>
@@ -9,7 +9,7 @@ const DescriptionParagraph = (props) => {
         <p className={styles.textParagraph}>{children}</p>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default DescriptionParagraph;
+export default DescriptionParagraph

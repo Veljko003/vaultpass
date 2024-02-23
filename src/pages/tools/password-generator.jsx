@@ -1,55 +1,58 @@
 // Imports
-import React, { useState } from "react";
+import React, { useState } from "react"
 
-import HeadPage from "@/web/components/HeadPage";
-import Main from "@/web/components/Main";
-import Sidebar from "@/web/components/ui/Sidebar";
-import Title from "@/web/components/ui/headers/Title";
-import Button from "@/web/components/ui/buttons/Button";
-import styles from "@/web/styles/Tools.module.css";
+import Main from "@/web/components/Main"
+import Sidebar from "@/web/components/ui/Sidebar"
+import Title from "@/web/components/ui/headers/Title"
+import Button from "@/web/components/ui/buttons/Button"
+import styles from "@/web/styles/Tools.module.css"
 
 // PasswordGenerator function
 const PasswordGenerator = () => {
-  const [password, setPassword] = useState("");
-  const [passwordLength, setPasswordLength] = useState(8);
-  const [includeUppercase, setIncludeUppercase] = useState(true);
-  const [includeLowercase, setIncludeLowercase] = useState(true);
-  const [includeNumbers, setIncludeNumbers] = useState(true);
-  const [includeSymbols, setIncludeSymbols] = useState(true);
+  const [password, setPassword] = useState("")
+  const [passwordLength, setPasswordLength] = useState(8)
+  const [includeUppercase, setIncludeUppercase] = useState(true)
+  const [includeLowercase, setIncludeLowercase] = useState(true)
+  const [includeNumbers, setIncludeNumbers] = useState(true)
+  const [includeSymbols, setIncludeSymbols] = useState(true)
 
   const generatePassword = () => {
-    const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
-    const numberChars = "0123456789";
-    const symbolChars = "!@#$%^&*()-_+=<>?";
+    const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    const lowercaseChars = "abcdefghijklmnopqrstuvwxyz"
+    const numberChars = "0123456789"
+    const symbolChars = "!@#$%^&*()-_+=<>?"
 
-    let allowedChars = "";
-    if (includeUppercase) allowedChars += uppercaseChars;
-    if (includeLowercase) allowedChars += lowercaseChars;
-    if (includeNumbers) allowedChars += numberChars;
-    if (includeSymbols) allowedChars += symbolChars;
+    let allowedChars = ""
+    let generatedPassword = ""
 
-    let generatedPassword = "";
+    if (includeUppercase) allowedChars += uppercaseChars
+
+    if (includeLowercase) allowedChars += lowercaseChars
+
+    if (includeNumbers) allowedChars += numberChars
+
+    if (includeSymbols) allowedChars += symbolChars
+
     for (let i = 0; i < passwordLength; i++) {
-      const randomIndex = Math.floor(Math.random() * allowedChars.length);
-      generatedPassword += allowedChars[randomIndex];
+      const randomIndex = Math.floor(Math.random() * allowedChars.length)
+      generatedPassword += allowedChars[randomIndex]
     }
-    setPassword(generatedPassword);
-  };
+
+    setPassword(generatedPassword)
+  }
 
   const handleCopyClick = () => {
-    const textarea = document.createElement("textarea");
-    textarea.value = password;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
-    alert("Password copied to clipboard!");
-  };
+    const textarea = document.createElement("textarea")
+    textarea.value = password
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand("copy")
+    document.body.removeChild(textarea)
+    alert("Password copied to clipboard!")
+  }
 
   return (
     <>
-      <HeadPage />
       <Main>
         <Sidebar />
         <Title titleLabel="Password Generator" />
@@ -119,7 +122,7 @@ const PasswordGenerator = () => {
         </div>
       </Main>
     </>
-  );
-};
+  )
+}
 
-export default PasswordGenerator;
+export default PasswordGenerator

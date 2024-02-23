@@ -3,7 +3,6 @@ import * as yup from "yup"
 import { useRouter } from "next/router"
 import Link from "next/link"
 
-import HeadPage from "@/web/components/HeadPage"
 import Main from "@/web/components/Main"
 import Footer from "@/web/components/Footer"
 import Form from "@/web/components/Form.jsx"
@@ -16,30 +15,34 @@ import apiClient from "@/web/services/apiClient.js"
 const initialValues = {
   username: "",
   email: "",
-  password: "",
+  password: ""
 }
 
 const validationSchema = yup.object().shape({
-  username: yup.string().min(1).required("Username is required").label("Username"),
+  username: yup
+    .string()
+    .min(1)
+    .required("Username is required")
+    .label("Username"),
   email: yup.string().email().required("E-mail is required").label("E-mail"),
   password: yup
-  .string()
-  .min(8)
-  .matches(/^.*(?=.*[0-9]+).*$/, "Password must contain a number")
-  .matches(
-    /^.*(?=.*\p{Ll}+).*$/u,
-    "Password must contain a lower case letter"
-  )
-  .matches(
-    /^.*(?=.*\p{Lu}+).*$/u,
-    "Password must contain a upper case letter"
-  )
-  .matches(
-    /^.*(?=.*[^0-9\p{L}]+).*$/u,
-    "Password must contain a special character"
-  )
-  .required("Password is required")
-  .label("Password"),
+    .string()
+    .min(8)
+    .matches(/^.*(?=.*[0-9]+).*$/, "Password must contain a number")
+    .matches(
+      /^.*(?=.*\p{Ll}+).*$/u,
+      "Password must contain a lower case letter"
+    )
+    .matches(
+      /^.*(?=.*\p{Lu}+).*$/u,
+      "Password must contain a upper case letter"
+    )
+    .matches(
+      /^.*(?=.*[^0-9\p{L}]+).*$/u,
+      "Password must contain a special character"
+    )
+    .required("Password is required")
+    .label("Password")
 })
 
 // SignUp function
@@ -57,7 +60,6 @@ const SignUp = () => {
 
   return (
     <>
-      <HeadPage />
       <Main>
         <ThemeSwitchButton />
         <br />
@@ -65,8 +67,7 @@ const SignUp = () => {
           title="SIGN UP"
           initialValues={initialValues}
           validationSchema={validationSchema}
-          onSubmit={handleSubmit}
-        >
+          onSubmit={handleSubmit}>
           <FormField name="username" placeholder="Username" label="Username" />
           <FormField
             name="email"
@@ -84,7 +85,14 @@ const SignUp = () => {
           <br />
           <br />
           <br />
-          <span className="text-sm text-[#111]">You already have an account ? <br /><Link href="/sign-in" className="text-[#0E8388]">Log in</Link></span><br /><br />
+          <span className="text-sm text-[#111]">
+            You already have an account ? <br />
+            <Link href="/sign-in" className="text-[#0E8388]">
+              Log in
+            </Link>
+          </span>
+          <br />
+          <br />
         </Form>
       </Main>
       <Footer />

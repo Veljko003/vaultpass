@@ -1,42 +1,42 @@
 // Imports
-import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import { useState } from "react"
+import Link from "next/link"
+import Image from "next/image"
 
-import styles from "@/web/styles/Sidebar.module.css";
-import HeadPage from "../HeadPage";
-import Main from "../Main";
-import ThemeSwitchButton from "./ThemeSwitchButton";
+import styles from "@/web/styles/Sidebar.module.css"
+import HeadPage from "../HeadPage"
+import Main from "../Main"
+import ThemeSwitchButton from "./ThemeSwitchButton"
 
 // Sidebar function
 const Sidebar = () => {
-  const [vaults, setVaults] = useState([]);
-  const [renamingIndex, setRenamingIndex] = useState(null);
-  const [newVaultName, setNewVaultName] = useState("");
+  const [vaults, setVaults] = useState([])
+  const [renamingIndex, setRenamingIndex] = useState(null)
+  const [newVaultName, setNewVaultName] = useState("")
 
   // --- VAULT FUNCTIONS
 
   // Add Vault (Folder)
   const addVault = () => {
-    const newVaults = [...vaults, { name: `Vault ${vaults.length + 1}` }];
-    setVaults(newVaults);
-  };
+    const newVaults = [...vaults, { name: `Vault ${vaults.length + 1}` }]
+    setVaults(newVaults)
+  }
 
   // Delete Vault (Folder)
   const deleteVault = (index) => {
-    const updatedVaults = vaults.filter((_, idx) => idx !== index);
-    setVaults(updatedVaults);
-  };
+    const updatedVaults = vaults.filter((_, idx) => idx !== index)
+    setVaults(updatedVaults)
+  }
 
   // Rename Vault (Folder)
   const renameVault = (index, newName) => {
-    const updatedVaults = [...vaults];
-    updatedVaults[index].name = newName;
-    setVaults(updatedVaults);
-    setRenamingIndex(null);
-    setNewVaultName(""); // Reset new name
-  };
-  
+    const updatedVaults = [...vaults]
+    updatedVaults[index].name = newName
+    setVaults(updatedVaults)
+    setRenamingIndex(null)
+    setNewVaultName("") // Reset new name
+  }
+
   // ---
 
   return (
@@ -206,8 +206,8 @@ const Sidebar = () => {
                         height={7}
                         className={styles.actionIcon}
                         onClick={() => {
-                          setRenamingIndex(index);
-                          setNewVaultName(vault.name);
+                          setRenamingIndex(index)
+                          setNewVaultName(vault.name)
                         }}
                       />
                     </>
@@ -219,7 +219,7 @@ const Sidebar = () => {
         </div>
       </Main>
     </>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

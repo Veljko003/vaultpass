@@ -1,66 +1,64 @@
 // Imports
-import React, { useState } from "react";
-import * as yup from "yup";
+import React, { useState } from "react"
+import * as yup from "yup"
 
-import HeadPage from "@/web/components/HeadPage";
-import Main from "@/web/components/Main";
-import Sidebar from "@/web/components/ui/Sidebar";
-import Button from "@/web/components/ui/buttons/Button";
-import CancelButton from "@/web/components/ui/buttons/CancelButton";
-import Subtitle from "@/web/components/ui/headers/Subtitle";
-import FormPage from "@/web/components/ui/forms/FormPage";
-import InputField from "@/web/components/ui/forms/InputField";
-import FormField from "@/web/components/ui/forms/FormField";
-import Textarea from "@/web/components/ui/forms/Textarea";
+import Main from "@/web/components/Main"
+import Sidebar from "@/web/components/ui/Sidebar"
+import Button from "@/web/components/ui/buttons/Button"
+import CancelButton from "@/web/components/ui/buttons/CancelButton"
+import Subtitle from "@/web/components/ui/headers/Subtitle"
+import FormPage from "@/web/components/ui/forms/FormPage"
+import InputField from "@/web/components/ui/forms/InputField"
+import FormField from "@/web/components/ui/forms/FormField"
+import Textarea from "@/web/components/ui/forms/Textarea"
 
 // Form attributes
 const initialValues = {
-  title: "",
-};
+  title: ""
+}
 
 const validationSchema = yup.object().shape({
-  title: yup.string().required("Title is required").label("Title"),
-});
+  title: yup.string().required("Title is required").label("Title")
+})
 
 // CreditCardForm function
 const CreditCardForm = () => {
-  const [creditCardNumber, setCreditCardNumber] = useState("");
-  const [cvv, setCVV] = useState(""); // Add CVV state
+  const [creditCardNumber, setCreditCardNumber] = useState("")
+  const [cvv, setCVV] = useState("") // Add CVV state
 
   // Function to format the credit card number with spaces
   const formatCreditCardNumber = (input) => {
-    const strippedInput = input.replace(/\s/g, ""); // Remove existing spaces
+    const strippedInput = input.replace(/\s/g, "") // Remove existing spaces
 
     if (strippedInput.length <= 4) {
-      return strippedInput; // No need for spaces if less than or equal to 4 characters
+      return strippedInput // No need for spaces if less than or equal to 4 characters
     }
 
     return strippedInput
       .match(/.{1,4}/g) // Split into chunks of 4 characters
-      .join(" ");
-  };
+      .join(" ")
+  }
 
   const handleCreditCardNumberChange = (event) => {
-    const input = event.target.value;
-    const formattedNumber = formatCreditCardNumber(input);
-    setCreditCardNumber(formattedNumber);
-  };
+    const input = event.target.value
+    const formattedNumber = formatCreditCardNumber(input)
+    setCreditCardNumber(formattedNumber)
+  }
 
   // Function to format CVV input
   const handleCVVChange = (event) => {
-    const input = event.target.value;
-    const formattedCVV = input.slice(0, 4); // Limit to a maximum of 4 characters
-    setCVV(formattedCVV);
-  };
+    const input = event.target.value
+    const formattedCVV = input.slice(0, 4) // Limit to a maximum of 4 characters
+    setCVV(formattedCVV)
+  }
+
   return (
     <>
-      <HeadPage />
       <Main>
         <Sidebar />
         <FormPage
           initialValues={initialValues}
-          validationSchema={validationSchema}
-        >
+          validationSchema={validationSchema}>
           <FormField
             name="title"
             type="text"
@@ -142,7 +140,7 @@ const CreditCardForm = () => {
         </FormPage>
       </Main>
     </>
-  );
-};
+  )
+}
 
-export default CreditCardForm;
+export default CreditCardForm

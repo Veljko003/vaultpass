@@ -15,12 +15,14 @@ const FormField = (props) => {
               "border-2 px-4 py-2 rounded-lg my-1 text-slate-950 focus:outline-1 outline-gray-100",
               {
                 "focus:border-pink-600": !error || !touched,
-                "border-red-600": error && touched,
-              },
+                "border-red-600": error && touched
+              }
             )}
           />
           {error && touched && (
-            <span className="text-sm font-medium text-red-500 mb-2">{error}</span>
+            <span className="text-sm font-medium text-red-500 mb-2">
+              {error}
+            </span>
           )}
         </label>
       )}

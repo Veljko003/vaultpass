@@ -2,14 +2,11 @@ import { Formik, Form as FormikForm } from "formik"
 import styles from "@/web/styles/Form.module.css"
 
 const Form = (props) => {
-  const { children, title, ...otherProps } = props
+  const { children, ...otherProps } = props
 
   return (
     <Formik {...otherProps}>
-      <FormikForm
-        noValidate
-        className={styles.formPageContainer}
-      >
+      <FormikForm noValidate className={styles.formPageContainer}>
         {children}
       </FormikForm>
     </Formik>

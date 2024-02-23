@@ -7,8 +7,8 @@ const InputField = (props) => {
     inputName,
     value,
     onChange,
-    maxLength,
-  } = props;
+    maxLength
+  } = props
 
   return (
     <>
@@ -21,10 +21,10 @@ const InputField = (props) => {
         value={value}
         onChange={onChange}
         maxLength={maxLength}
-        style={{ color: 'var(--monochrome)' }}
+        style={{ color: "var(--monochrome)" }}
       />
     </>
-  );
-};
+  )
+}
 
-export default InputField;
+export default InputField

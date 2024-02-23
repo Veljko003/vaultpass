@@ -1,7 +1,6 @@
 // Imports
 import Link from "next/link"
 
-import HeadPage from "@/web/components/HeadPage"
 import Title from "@/web/components/ui/headers/Title"
 import Main from "@/web/components/Main"
 import Footer from "@/web/components/Footer"
@@ -13,22 +12,30 @@ import ThemeSwitchButton from "@/web/components/ui/ThemeSwitchButton"
 // Welcome function
 export default function Welcome() {
   return (
-      <>
-        <HeadPage />
-        <Main>
-          <ThemeSwitchButton />
-          <Container>
-              <Title titleLabel="VaultPass" />
-              <p className={styles.paragraphe}>VaultPass is an online password manager. <br /> Log into your account or if you <br /> don&apos;t have one, create it.</p>
-              <br />
-              <Link href="/all-items"><Button btnLabel="Let's go" /></Link>
-              <br />
-              <br />
-              <Link href="/sign-in"><Button btnLabel="Log in" /></Link>
-              <Link href="/sign-up"><Button btnLabel="Sign up" /></Link>
-          </Container>
-        </Main>
-        <Footer />
-      </>
+    <>
+      <Main>
+        <ThemeSwitchButton />
+        <Container>
+          <Title titleLabel="VaultPass" />
+          <p className={styles.paragraphe}>
+            VaultPass is an online password manager. <br /> Log into your
+            account or if you <br /> don&apos;t have one, create it.
+          </p>
+          <br />
+          <Link href="/all-items">
+            <Button btnLabel="Let's go" />
+          </Link>
+          <br />
+          <br />
+          <Link href="/sign-in">
+            <Button btnLabel="Log in" />
+          </Link>
+          <Link href="/sign-up">
+            <Button btnLabel="Sign up" />
+          </Link>
+        </Container>
+      </Main>
+      <Footer />
+    </>
   )
 }

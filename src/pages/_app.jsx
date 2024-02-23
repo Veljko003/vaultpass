@@ -6,8 +6,8 @@ const client = new QueryClient()
 const App = ({ Component, pageProps }) => (
   <>
     <QueryClientProvider client={client}>
-        <HeadPage />
-        <Component {...pageProps} />
+      <HeadPage />
+      <Component {...pageProps} />
     </QueryClientProvider>
   </>
 )
