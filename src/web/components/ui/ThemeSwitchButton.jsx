@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 import styles from "@/web/styles/Home.module.css"
 
 const ThemeSwitchButton = () => {

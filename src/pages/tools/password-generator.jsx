@@ -3,9 +3,9 @@ import React, { useState } from "react";
 
 import HeadPage from "@/web/components/HeadPage";
 import Main from "@/web/components/Main";
-import Sidebar from "@/web/components/Sidebar";
-import Title from "@/web/components/Title";
-import Button from "@/web/components/Button";
+import Sidebar from "@/web/components/ui/Sidebar";
+import Title from "@/web/components/ui/headers/Title";
+import Button from "@/web/components/ui/buttons/Button";
 import styles from "@/web/styles/Tools.module.css";
 
 // PasswordGenerator function

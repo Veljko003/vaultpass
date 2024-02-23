@@ -4,8 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 import styles from "@/web/styles/Sidebar.module.css";
-import HeadPage from "./HeadPage";
-import Main from "./Main";
+import HeadPage from "../HeadPage";
+import Main from "../Main";
 import ThemeSwitchButton from "./ThemeSwitchButton";
 
 // Sidebar function
@@ -62,7 +62,7 @@ const Sidebar = () => {
                   All items
                 </li>
               </Link>
-              <Link className="" href="/passwords">
+              <Link className="" href="/categories/passwords">
                 <li className={styles.sidebarLi}>
                   <Image
                     src="/password.svg"
@@ -74,7 +74,7 @@ const Sidebar = () => {
                   Passwords
                 </li>
               </Link>
-              <Link className="" href="/credit-cards">
+              <Link className="" href="/categories/credit-cards">
                 <li className={styles.sidebarLi}>
                   <Image
                     src="/credit-card.svg"
@@ -86,7 +86,7 @@ const Sidebar = () => {
                   Credit Cards
                 </li>
               </Link>
-              <Link className="" href="/personal-info">
+              <Link className="" href="/categories/personal-info">
                 <li className={styles.sidebarLi}>
                   <Image
                     src="/personal-info.svg"
@@ -98,7 +98,7 @@ const Sidebar = () => {
                   Personal Info
                 </li>
               </Link>
-              <Link className="" href="/secure-notes">
+              <Link className="" href="/categories/secure-notes">
                 <li className={styles.sidebarLi}>
                   <Image
                     src="/secure-note.svg"
@@ -115,7 +115,7 @@ const Sidebar = () => {
           <div className={styles.linksContainer}>
             <div className={styles.partName}>Tools</div>
             <ul>
-              <Link href="/password-generator">
+              <Link href="/tools/password-generator">
                 <li className={styles.sidebarLi}>
                   <Image
                     src="/password-generator.svg"
@@ -127,7 +127,7 @@ const Sidebar = () => {
                   Password Generator
                 </li>
               </Link>
-              <Link href="/password-strength-checker">
+              <Link href="/tools/password-strength-checker">
                 <li className={styles.sidebarLi}>
                   <Image
                     src="/password-strength-checker.svg"
@@ -139,7 +139,7 @@ const Sidebar = () => {
                   Password Strength Checker
                 </li>
               </Link>
-              <Link href="/password-health">
+              <Link href="/tools/password-health">
                 <li className={styles.sidebarLi}>
                   <Image
                     src="/password-health.svg"

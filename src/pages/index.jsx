@@ -5,12 +5,12 @@ import { useRouter } from 'next/router';
 import HeadPage from "@/web/components/HeadPage";
 import Main from "@/web/components/Main";
 import Footer from "@/web/components/Footer";
-import Container from "@/web/components/Container";
-import Button from "@/web/components/Button";
+import Container from "@/web/components/ui/containers/Container";
+import Button from "@/web/components/ui/buttons/Button";
 import styles from "@/web/styles/Home.module.css";
-import ThemeSwitchButton from "@/web/components/ThemeSwitchButton";
-import Subtitle from "@/web/components/Subtitle";
-import InputField from "@/web/components/InputField";
+import ThemeSwitchButton from "@/web/components/ui/ThemeSwitchButton";
+import Subtitle from "@/web/components/ui/headers/Subtitle";
+import InputField from "@/web/components/ui/forms/InputField";
 
 // LandingPage function
 export default function LandingPage() {

@@ -1,16 +1,16 @@
 // Imports
 import * as yup from "yup"
-import { useRouter } from "next/router.js"
+import { useRouter } from "next/router"
 import Link from "next/link"
 
 import HeadPage from "@/web/components/HeadPage"
 import Main from "@/web/components/Main"
 import Footer from "@/web/components/Footer"
 import Form from "@/web/components/Form.jsx"
-import FormField from "@/web/components/FormField.jsx"
-import SubmitButton from "@/web/components/SubmitButton.jsx"
-import ThemeSwitchButton from "@/web/components/ThemeSwitchButton"
-import api from "@/web/services/api.js"
+import FormField from "@/web/components/ui/forms/FormField.jsx"
+import SubmitButton from "@/web/components/ui/buttons/SubmitButton.jsx"
+import ThemeSwitchButton from "@/web/components/ui/ThemeSwitchButton"
+import apiClient from "@/web/services/apiClient.js"
 
 // Form attributes
 const initialValues = {
@@ -47,7 +47,7 @@ const SignUp = () => {
   const router = useRouter()
   const handleSubmit = async (values) => {
     try {
-      await api.post("/sign-up", values)
+      await apiClient.post("/sign-up", values)
 
       router.push("/sign-in")
     } catch (err) {

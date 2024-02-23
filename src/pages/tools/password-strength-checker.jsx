@@ -4,9 +4,8 @@ import zxcvbn from "zxcvbn";
 
 import HeadPage from "@/web/components/HeadPage";
 import Main from "@/web/components/Main";
-import Sidebar from "@/web/components/Sidebar";
+import Sidebar from "@/web/components/ui/Sidebar";
 import styles from "@/web/styles/Tools.module.css";
-import "@/web/services/serviceWorker.js";
 
 // PasswordStrengthChecker function
 const PasswordStrengthChecker = () => {

@@ -3,10 +3,10 @@ import Link from "next/link"
 
 import HeadPage from "@/web/components/HeadPage"
 import Main from "@/web/components/Main"
-import Sidebar from "@/web/components/Sidebar"
-import Button from "@/web/components/Button"
-import DescriptionParagraph from "@/web/components/DescriptionParagraph"
-import ListContainer from "@/web/components/ListContainer"
+import Sidebar from "@/web/components/ui/Sidebar"
+import Button from "@/web/components/ui/buttons/Button"
+import DescriptionParagraph from "@/web/components/ui/DescriptionParagraph"
+import ListContainer from "@/web/components/ui/containers/ListContainer"
 
 // CreditCards function
 const CreditCards = () => {
@@ -16,7 +16,7 @@ const CreditCards = () => {
             <Main>
                 <Sidebar />
                 <br />
-                <Link href="/formPages/creditCardForm"><Button btnLabel="Add credit card" /></Link>
+                <Link href="/form-pages/creditCardForm"><Button btnLabel="Add credit card" /></Link>
                 <DescriptionParagraph>Save your credit card information to pay quickly and without rewritting over and over again.</DescriptionParagraph>
                 <ListContainer></ListContainer>
             </Main>

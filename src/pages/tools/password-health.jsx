@@ -1,7 +1,7 @@
 // Imports
 import HeadPage from "@/web/components/HeadPage"
 import Main from "@/web/components/Main"
-import Sidebar from "@/web/components/Sidebar"
+import Sidebar from "@/web/components/ui/Sidebar"
 
 // PasswordHealth function
 const PasswordHealth = () => {

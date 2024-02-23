@@ -4,15 +4,15 @@ import React, { useState } from "react";
 
 import HeadPage from "@/web/components/HeadPage";
 import Main from "@/web/components/Main";
-import Sidebar from "@/web/components/Sidebar";
-import Button from "@/web/components/Button";
-import CancelButton from "@/web/components/CancelButton";
-import FormPage from "@/web/components/FormPage";
-import FormField from "@/web/components/FormField";
-import Subtitle from "@/web/components/Subtitle";
-import Textarea from "@/web/components/Textarea";
-import AddButton from "@/web/components/AddButton";
-import Modal from "@/web/components/Modal";
+import Sidebar from "@/web/components/ui/Sidebar";
+import Button from "@/web/components/ui/buttons/Button";
+import CancelButton from "@/web/components/ui/buttons/CancelButton";
+import FormPage from "@/web/components/ui/forms/FormPage";
+import FormField from "@/web/components/ui/forms/FormField";
+import Subtitle from "@/web/components/ui/headers/Subtitle";
+import Textarea from "@/web/components/ui/forms/Textarea";
+import AddButton from "@/web/components/ui/buttons/AddButton";
+import Modal from "@/web/components/ui/Modal";
 
 // Form attributes
 const initialValues = {

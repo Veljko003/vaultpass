@@ -4,14 +4,14 @@ import * as yup from "yup";
 
 import HeadPage from "@/web/components/HeadPage";
 import Main from "@/web/components/Main";
-import Sidebar from "@/web/components/Sidebar";
-import Button from "@/web/components/Button";
-import CancelButton from "@/web/components/CancelButton";
-import Subtitle from "@/web/components/Subtitle";
-import FormPage from "@/web/components/FormPage";
-import InputField from "@/web/components/InputField";
-import FormField from "@/web/components/FormField";
-import Textarea from "@/web/components/Textarea";
+import Sidebar from "@/web/components/ui/Sidebar";
+import Button from "@/web/components/ui/buttons/Button";
+import CancelButton from "@/web/components/ui/buttons/CancelButton";
+import Subtitle from "@/web/components/ui/headers/Subtitle";
+import FormPage from "@/web/components/ui/forms/FormPage";
+import InputField from "@/web/components/ui/forms/InputField";
+import FormField from "@/web/components/ui/forms/FormField";
+import Textarea from "@/web/components/ui/forms/Textarea";
 
 // Form attributes
 const initialValues = {

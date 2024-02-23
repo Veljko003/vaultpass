@@ -4,12 +4,12 @@ import * as yup from "yup"
 import HeadPage from "@/web/components/HeadPage";
 import Main from "@/web/components/Main";
 import Footer from "@/web/components/Footer";
-import Sidebar from "@/web/components/Sidebar";
-import Button from "@/web/components/Button";
-import FormPage from "@/web/components/FormPage";
-import FormField from "@/web/components/FormField";
-import Textarea from "@/web/components/Textarea";
-import CancelButton from "@/web/components/CancelButton";
+import Sidebar from "@/web/components/ui/Sidebar";
+import Button from "@/web/components/ui/buttons/Button";
+import FormPage from "@/web/components/ui/forms/FormPage";
+import FormField from "@/web/components/ui/forms/FormField";
+import Textarea from "@/web/components/ui/forms/Textarea";
+import CancelButton from "@/web/components/ui/buttons/CancelButton";
 
 // Form attributes
 const validationSchema = yup.object().shape({

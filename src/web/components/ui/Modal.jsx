@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 
 import styles from '@/web/styles/Modal.module.css';
-import InputField from './InputField';
-import Button from './Button';
+import InputField from './forms/InputField';
+import Button from './buttons/Button';
 
 // Modal
 const Modal = ({ isOpen, onClose, modalTitle, modalInputPlaceholder, onClick }) => {

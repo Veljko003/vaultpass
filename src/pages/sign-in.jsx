@@ -7,10 +7,10 @@ import Link from "next/link";
 import HeadPage from "@/web/components/HeadPage";
 import Main from "@/web/components/Main";
 import Form from "@/web/components/Form";
-import FormField from "@/web/components/FormField";
-import SubmitButton from "@/web/components/SubmitButton";
+import FormField from "@/web/components/ui/forms/FormField";
+import SubmitButton from "@/web/components/ui/buttons/SubmitButton";
 import Footer from "@/web/components/Footer";
-import ThemeSwitchButton from "@/web/components/ThemeSwitchButton";
+import ThemeSwitchButton from "@/web/components/ui/ThemeSwitchButton";
 import api from "@/web/services/api";
 
 // Form attributes

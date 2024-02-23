@@ -2,13 +2,13 @@
 import Link from "next/link"
 
 import HeadPage from "@/web/components/HeadPage"
-import Title from "@/web/components/Title"
+import Title from "@/web/components/ui/headers/Title"
 import Main from "@/web/components/Main"
 import Footer from "@/web/components/Footer"
-import Container from "@/web/components/Container"
-import Button from "@/web/components/Button"
+import Container from "@/web/components/ui/containers/Container"
+import Button from "@/web/components/ui/buttons/Button"
 import styles from "@/web/styles/Home.module.css"
-import ThemeSwitchButton from "@/web/components/ThemeSwitchButton"
+import ThemeSwitchButton from "@/web/components/ui/ThemeSwitchButton"
 
 // Welcome function
 export default function Welcome() {

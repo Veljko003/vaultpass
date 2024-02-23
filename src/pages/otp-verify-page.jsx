@@ -2,11 +2,11 @@ import React, { useState, useRef } from "react";
 import HeadPage from "@/web/components/HeadPage";
 import Main from "@/web/components/Main";
 import Footer from "@/web/components/Footer";
-import Container from "@/web/components/Container";
-import Button from "@/web/components/Button";
+import Container from "@/web/components/ui/containers/Container";
+import Button from "@/web/components/ui/buttons/Button";
 import styles from "@/web/styles/Home.module.css";
-import ThemeSwitchButton from "@/web/components/ThemeSwitchButton";
-import Title from "@/web/components/Title";
+import ThemeSwitchButton from "@/web/components/ui/ThemeSwitchButton";
+import Title from "@/web/components/ui/headers/Title";
 
 export default function VerificationOTP() {
   const [otp, setOTP] = useState(["", "", "", ""]); // Initialize with four empty strings

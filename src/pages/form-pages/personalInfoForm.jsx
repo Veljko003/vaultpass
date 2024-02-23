@@ -3,13 +3,13 @@ import * as yup from "yup"
 
 import HeadPage from "@/web/components/HeadPage";
 import Main from "@/web/components/Main";
-import Sidebar from "@/web/components/Sidebar";
-import Button from "@/web/components/Button";
-import FormField from "@/web/components/FormField";
-import FormPage from "@/web/components/FormPage";
-import Subtitle from "@/web/components/Subtitle";
-import CancelButton from "@/web/components/CancelButton";
-import Textarea from "@/web/components/Textarea";
+import Sidebar from "@/web/components/ui/Sidebar";
+import Button from "@/web/components/ui/buttons/Button";
+import FormField from "@/web/components/ui/forms/FormField";
+import FormPage from "@/web/components/ui/forms/FormPage";
+import Subtitle from "@/web/components/ui/headers/Subtitle";
+import CancelButton from "@/web/components/ui/buttons/CancelButton";
+import Textarea from "@/web/components/ui/forms/Textarea";
 
 // Form attributes
 const validationSchema = yup.object().shape({
