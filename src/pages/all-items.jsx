@@ -3,7 +3,6 @@ import React, { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 
-import HeadPage from "@/web/components/HeadPage"
 import Main from "@/web/components/Main"
 import Sidebar from "@/web/components/ui/Sidebar"
 import Button from "@/web/components/ui/buttons/Button"
@@ -20,7 +19,6 @@ const AllItems = () => {
 
   return (
     <>
-      <HeadPage />
       <Main>
         <Sidebar />
         <br />
