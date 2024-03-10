@@ -9,6 +9,7 @@ VaultPass is a password manager.
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
+- [How to setup ?](#how-to-setup)
 - [Author](#author)
 
 ## Overview
@@ -40,6 +41,19 @@ It was created using MERN stack and Next.js (Pages Router).
 
 #### DB
 - PostgreSQL
+
+## How to setup ?
+At the **root of your project**:
+1. Run `npm i` to install all dependencies
+2. Create a `.env.local` file and add this:
+```
+DB__CONNECTION=<Connection link to your PostgreSQL DB>
+NEXT_PUBLIC_API__BASE_URL=<Link to API folder inside pages directory>
+SECURITY__JWT__SECRET=<Secret code of a minimum 32 character string with only uppercase and lowercase letters and numbers>
+SECURITY__PASSWORD__PEPPER=<Secret code of a minimum 256 character string with lowercase letters>
+```
+3. Run `npx knex migrate:latest` to update database
+5. Run `npm run dev` to start the development server
 
 ## Author
 
