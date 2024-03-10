@@ -1,7 +1,6 @@
 // Imports
 import * as yup from "yup"
 import { useRouter } from "next/router"
-import Link from "next/link"
 import { useMutation } from "@tanstack/react-query"
 
 import Main from "@/web/components/Main"
@@ -10,6 +9,7 @@ import FormField from "@/web/components/ui/forms/FormField"
 import SubmitButton from "@/web/components/ui/buttons/SubmitButton"
 import Footer from "@/web/components/Footer"
 import ThemeSwitchButton from "@/web/components/ui/ThemeSwitchButton"
+import ClickableRedirect from "@/web/components/ui/ClickableRedirect"
 import apiClient from "@/web/services/apiClient"
 import { emailValidator, passwordValidator } from "@/utils/validators"
 import { useSession } from "@/web/components/SessionContext"
@@ -66,12 +66,11 @@ const SignIn = () => {
           <br />
           <br />
           <br />
-          <span className="text-sm text-[#111]">
-            You don&apos;t have an account ? <br />
-            <Link href="/sign-up" className="text-[#0E8388]">
-              Create one
-            </Link>
-          </span>
+          <ClickableRedirect
+            redirectMessage="You don't have an account ?"
+            redirectLink="/sign-up"
+            redirectLinkLabel="Create one"
+          />
           <br />
           <br />
         </Form>

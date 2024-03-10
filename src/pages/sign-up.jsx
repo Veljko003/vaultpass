@@ -1,7 +1,6 @@
 // Imports
 import * as yup from "yup"
 import { useRouter } from "next/router"
-import Link from "next/link"
 import { useMutation } from "@tanstack/react-query"
 
 import Main from "@/web/components/Main"
@@ -10,8 +9,13 @@ import Form from "@/web/components/ui/forms/Form.jsx"
 import FormField from "@/web/components/ui/forms/FormField.jsx"
 import SubmitButton from "@/web/components/ui/buttons/SubmitButton.jsx"
 import ThemeSwitchButton from "@/web/components/ui/ThemeSwitchButton"
+import ClickableRedirect from "@/web/components/ui/ClickableRedirect"
 import apiClient from "@/web/services/apiClient.js"
-import { nameValidator, passwordValidator, emailValidator } from "@/utils/validators"
+import {
+  nameValidator,
+  passwordValidator,
+  emailValidator
+} from "@/utils/validators"
 // import { useSession } from "@/web/components/SessionContext"
 
 // Form attributes
@@ -71,7 +75,12 @@ const SignUp = () => {
           initialValues={initialValues}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}>
-          <FormField name="username" type="text" placeholder="jdoe" label="Username" />
+          <FormField
+            name="username"
+            type="text"
+            placeholder="jdoe"
+            label="Username"
+          />
           <FullNameFormFields />
           <FormField
             name="email"
@@ -89,15 +98,14 @@ const SignUp = () => {
           <br />
           <br />
           <br />
-          <span className="text-sm text-[#111]">
-            You already have an account ? <br />
-            <Link href="/sign-in" className="text-[#0E8388]">
-              Log in
-            </Link>
-          </span>
+          <ClickableRedirect
+            redirectMessage="Already have an account ?"
+            redirectLink="/sign-in"
+            redirectLinkLabel="Log in"
+          />
           <br />
           <br />
-        </Form>
+          </Form>
       </Main>
       <Footer />
     </>

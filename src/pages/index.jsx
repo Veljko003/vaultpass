@@ -28,7 +28,7 @@ export default function Welcome() {
           <br />
           <br />
           <Link href="/sign-in">
-            <Button btnLabel="Log in" />
+            <Button btnLabel="Sign in" />
           </Link>
           <Link href="/sign-up">
             <Button btnLabel="Sign up" />
