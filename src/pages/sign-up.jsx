@@ -12,7 +12,7 @@ import SubmitButton from "@/web/components/ui/buttons/SubmitButton.jsx"
 import ThemeSwitchButton from "@/web/components/ui/ThemeSwitchButton"
 import apiClient from "@/web/services/apiClient.js"
 import { nameValidator, passwordValidator, emailValidator } from "@/utils/validators"
-import { useSession } from "@/web/components/SessionContext"
+// import { useSession } from "@/web/components/SessionContext"
 
 // Form attributes
 const initialValues = {

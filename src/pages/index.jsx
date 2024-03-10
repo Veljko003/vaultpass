@@ -1,33 +1,38 @@
 // Imports
+import Link from "next/link"
+
+import Title from "@/web/components/ui/headers/Title"
 import Main from "@/web/components/Main"
 import Footer from "@/web/components/Footer"
 import Container from "@/web/components/ui/containers/Container"
 import Button from "@/web/components/ui/buttons/Button"
 import styles from "@/web/styles/Home.module.css"
 import ThemeSwitchButton from "@/web/components/ui/ThemeSwitchButton"
-import Subtitle from "@/web/components/ui/headers/Subtitle"
-import InputField from "@/web/components/ui/forms/InputField"
 
-// LandingPage function
-export default function LandingPage() {
-  const handleSendCode = async () => {
-    //
-  }
-
+// Welcome function
+export default function Welcome() {
   return (
     <>
       <Main>
         <ThemeSwitchButton />
         <Container>
-          <Subtitle titleLabel="Enter your e-mail" />
-          <InputField
-            type="email"
-            placeholder="someone@domain.com"
-            className={styles.emailOTP}
-          />
+          <Title titleLabel="VaultPass" />
+          <p className={styles.paragraphe}>
+            VaultPass is an online password manager. <br /> Log into your
+            account or if you <br /> don&apos;t have one, create it.
+          </p>
+          <br />
+          <Link href="/all-items">
+            <Button btnLabel="Let's go" />
+          </Link>
           <br />
           <br />
-          <Button btnLabel="Send code" onClick={handleSendCode} />
+          <Link href="/sign-in">
+            <Button btnLabel="Log in" />
+          </Link>
+          <Link href="/sign-up">
+            <Button btnLabel="Sign up" />
+          </Link>
         </Container>
       </Main>
       <Footer />
