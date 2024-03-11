@@ -16,7 +16,6 @@ import {
   passwordValidator,
   emailValidator
 } from "@/utils/validators"
-// import { useSession } from "@/web/components/SessionContext"
 
 // Form attributes
 const initialValues = {
@@ -60,7 +59,7 @@ const SignUp = () => {
   })
   const handleSubmit = async (values) => {
     await mutateAsync(values)
-    router.push("/sign-in")
+    router.push("/welcome")
 
     return true
   }
