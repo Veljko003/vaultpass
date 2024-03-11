@@ -22,10 +22,6 @@ export default function Welcome() {
             account or if you <br /> don&apos;t have one, create it.
           </p>
           <br />
-          <Link href="/all-items">
-            <Button btnLabel="Let's go" />
-          </Link>
-          <br />
           <br />
           <Link href="/sign-in">
             <Button btnLabel="Sign in" />
