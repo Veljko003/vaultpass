@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react"
 import jsonwebtoken from "jsonwebtoken"
+import { useRouter } from "next/router"
 import config from "@/web/config"
 import apiClient from "@/web/services/apiClient"
 
@@ -9,6 +10,7 @@ export const useSession = () => useContext(SessionContext)
 
 export const SessionProvider = (props) => {
   const [session, setSession] = useState(null)
+  const router = useRouter()
   const saveSessionToken = (jwt) => {
     localStorage.setItem(config.security.session.storageKey, jwt)
 
@@ -22,6 +24,7 @@ export const SessionProvider = (props) => {
     apiClient.delete("/sessions")
 
     setSession(null)
+    router.push("/")
   }
 
   useEffect(() => {

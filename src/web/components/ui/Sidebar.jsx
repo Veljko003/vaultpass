@@ -7,12 +7,15 @@ import styles from "@/web/styles/Sidebar.module.css"
 import HeadPage from "../HeadPage"
 import Main from "../Main"
 import ThemeSwitchButton from "./ThemeSwitchButton"
+import Button from "@/web/components/ui/buttons/Button"
+import { useSession } from "@/web/components/SessionContext"
 
 // Sidebar function
 const Sidebar = () => {
   const [vaults, setVaults] = useState([])
   const [renamingIndex, setRenamingIndex] = useState(null)
   const [newVaultName, setNewVaultName] = useState("")
+  const { signOut } = useSession()
 
   // --- VAULT FUNCTIONS
 
@@ -46,6 +49,7 @@ const Sidebar = () => {
         <div className={styles.sidebarContainer}>
           <div className={styles.linksContainer}>
             <ThemeSwitchButton />
+            <Button btnLabel="Sign out" onClick={signOut} />
             <br />
             <br />
             <div className={styles.partName}>Category</div>
